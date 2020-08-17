@@ -1,0 +1,16 @@
+@import '../styles/main.scss';
+
+
+.navbar {
+    border-bottom: 1px solid $lighterGreen;
+    margin: auto;
+    padding-top: 0.7rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.jambotron {
+    background: linear-gradient(142.28deg, $pinctonBlue 0.89%, $java 94.05%);
+    min-height: 15rem;
+}
