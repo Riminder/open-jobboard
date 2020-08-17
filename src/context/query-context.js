@@ -4,19 +4,19 @@ const QueryContext = React.createContext()
 
 const QueryReducer = (state, action) => {
   switch (action.type) {
-    case "increment": {
-      return { score: state.score + 1 }
+    case "SEND": {
+      return { query: state.query }
     }
-    case "reset": {
-      return { score: 0 }
+    case "GET": {
+      return { query:  {} }
     }
     default: {
       throw new Error(`Unhandled action type ${action.type}`)
     }
   }
 }
-const ScoreProvider = ({ children }) => {
-  const [state, dispatch] = React.useReducer(scoreReducer, {score:0})
+const QueryProvider = ({ children }) => {
+  const [state, dispatch] = React.useReducer(scoreReducer, {query:0})
 
   return (
     <ScoreContext.Provider value={{state, dispatch}}>
@@ -25,6 +25,6 @@ const ScoreProvider = ({ children }) => {
   )
 }
 
-const useScore = () => useContext(ScoreContext)
+const useQuery = () => useContext(ScoreContext)
 
-export { ScoreProvider, useScore }
+export { QueryProvider, useQuery }
