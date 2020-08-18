@@ -5,7 +5,7 @@ import '../styles/main.scss';
 
 const Offers = () => {
 	return (
-		<Layout>
+		<Layout jambotron>
 			<div className="container">
 				<div className="col-33">
 				</div>
