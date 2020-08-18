@@ -4,4 +4,68 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.text-extra-large {
+    font-size: 2.66rem;
+    line-height: 100%;
+}
+
+.text-large {
+    font-size: 1.9rem;
+    line-height: 2.1rem;
+}
+
+.text-medium {
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.text-bold-500 {
+    font-weight: 500;
+}
+
+.text-bold-600 {
+    font-weight: 600;
+}
+
+.text-bold-700 {
+    font-weight: 700;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-primary {
+    color: $primary;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, $primary .89%, $java 94.05%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-right {
+    margin-left: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
 }
