@@ -1,0 +1,81 @@
+@import '../../styles/main.scss';
+
+.clipped {
+    display: flex;
+    height: 48rem;
+    background: linear-gradient(142.28deg, $primary 0.89%, $java 94.05%);
+}
+
+.left {
+    flex: 1 1 53%;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    background: white;
+    margin-right: -6%;
+    color: $primary;
+}
+
+.left:hover {
+    background: linear-gradient(142.28deg, $primary 0.89%, $java 94.05%);
+    color: white;
+}
+
+.right {
+    flex: 1 1 53%;
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+    background: white;
+    color: $primary;
+}
+
+.right:hover {
+    background: #e74a50;
+    color: white;
+}
+
+.left__content {
+    padding: 3rem 0 6rem 6rem;
+}
+
+.right__content {
+    padding: 3rem 0 6rem 6rem;
+}
+
+.heading {
+    min-height: 10rem;
+}
+
+.shape {
+    width: 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shape__justified {
+    float: right;
+    padding-right: 11rem;
+}
+
+.shape__text {
+    margin-top: 2rem;
+    color: $downriverLight;
+    font-weight: 700;
+    font-size: 1.333rem;
+    line-height: 1.583rem;
+}
+
+.right__content_hovered {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 7rem 13rem 0;
+    padding-left: calc(11% + 5rem);
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+    width: 100%;
+}
