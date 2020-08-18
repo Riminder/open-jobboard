@@ -9,7 +9,7 @@ const Cards = () => {
         <div className={cardsStyles.content}>
           <div className={cardsStyles.item}>
             <div className="mb-1">
-              <img src={mock96x96} className={cardsStyles.logo} />
+              <img src={mock96x96} alt="mock 2" className={cardsStyles.logo} />
             </div>
             <div className="text-medium">
               Ipsum amet mollit anim sint cillum.
@@ -17,7 +17,7 @@ const Cards = () => {
           </div>
           <div className={cardsStyles.item}>
             <div className="mb-1">
-              <img src={mock96x96} className={cardsStyles.logo} />
+              <img src={mock96x96} alt="mock 3" className={cardsStyles.logo} />
             </div>
             <div className="text-medium">
               Ipsum amet mollit anim sint cillum.
@@ -25,7 +25,7 @@ const Cards = () => {
           </div>
           <div className={cardsStyles.item}>
             <div className="mb-1">
-              <img src={mock96x96} className={cardsStyles.logo} />
+              <img src={mock96x96} alt="mock 5" className={cardsStyles.logo} />
             </div>
             <div className="text-medium">
               Ipsum amet mollit anim sint cillum.

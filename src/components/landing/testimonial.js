@@ -26,7 +26,7 @@ const Testimonial = props => {
             </div>
           </div>
           <div>
-            <img className={testimonialStyles.img} src={mock600x700} />
+            <img alt="mock 15" className={testimonialStyles.img} src={mock600x700} />
           </div>
         </div>
     </section>

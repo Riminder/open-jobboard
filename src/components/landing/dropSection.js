@@ -16,6 +16,8 @@ const DropSection = () => {
       <div className={clippedStyles.left}
         onMouseEnter={() => setIsShownLeft(false)}
         onMouseLeave={() => setIsShownLeft(true)}
+        role="textbox"
+        tabIndex="-1"
       >
         {isShownLeft ? (
             <div className={clippedStyles.left__content}>
@@ -40,6 +42,8 @@ const DropSection = () => {
         className={clippedStyles.right}
          onMouseEnter={() => setIsShownRight(false)}
         onMouseLeave={() => setIsShownRight(true)}
+        role="textbox"
+        tabIndex="-2"
       >
         { isShownRight ? (
             <div className={clippedStyles.right__content}>
@@ -55,27 +59,27 @@ const DropSection = () => {
           (
             <div className={clippedStyles.right__content_hovered}>
               <span className={clippedStyles.row}>
-                <img src={times} />
-                <img src={times} />
-                <img src={times} />
+                <img src={times} alt="times 1" />
+                <img src={times} alt="times 2" />
+                <img src={times} alt="times 3" />
               </span>
               <span className={`${clippedStyles.row} text-large text-bold-700 text-right`}>
                 Trop pressé
               </span>
               <span className={clippedStyles.row}>
-                <img src={times} />
-                <img src={times} />
-                <img src={times} />
-                <img src={times} />
+                <img src={times} alt="times 4" />
+                <img src={times} alt="times 5" />
+                <img src={times} alt="times 6" />
+                <img src={times} alt="times 7" />
               </span>
               <span className={`${clippedStyles.row} text-large text-right`}>
                 Accède à nos offres <FontAwesomeIcon className="icon-right" icon={faLongArrowAltRight} />
               </span>
               <span className={clippedStyles.row}>
-                <img src={times} />
-                <img src={times} />
-                <img src={times} />
-                <img src={times} />
+                <img src={times} alt="times 8" />
+                <img src={times} alt="times 9" />
+                <img src={times} alt="times 10" />
+                <img src={times} alt="times 11" />
               </span>
             </div>
           )

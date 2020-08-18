@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer class={footerStyles.section}>
       <div class={footerStyles.footer_top}>
-        <img src={mock146x53} />
+        <img alt="mock 1" src={mock146x53} />
         <span class="text-medium text-bold-700 text-center">Ullamco eu dolor irure labore.</span>
       </div>
       <div class={footerStyles.divider}></div>
@@ -26,11 +26,11 @@ const Footer = () => {
             <a href="#">link</a>
           </div>
           <div class={footerStyles.socials}>
-            <a href="#" target="blank"><img src={linkedin} /></a>
-            <a href="#" target="blank"><img src={facebook} /></a>
-            <a href="#" target="blank"><img src={twitter} /></a>
-            <a href="#" target="blank"><img src={youtube} /></a>
-            <a href="#" target="blank"><img src={instagram} /></a>
+            <a href="#" target="blank"><img alt="linkedin" src={linkedin} /></a>
+            <a href="#" target="blank"><img alt="facebook" src={facebook} /></a>
+            <a href="#" target="blank"><img alt="twitter" src={twitter} /></a>
+            <a href="#" target="blank"><img alt="youtube" src={youtube} /></a>
+            <a href="#" target="blank"><img alt="instagram" src={instagram} /></a>
         </div>
       </div>
   </footer>

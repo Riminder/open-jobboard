@@ -8,7 +8,7 @@ const Figures = () => {
       <div className="text-center text-bold-700 text-large">Dolor sint exercitation commodo magna</div>
       <div className={figuresStyles.content}>
         <div className={figuresStyles.item}>
-          <img src={mock96x96} className={figuresStyles.logo} />
+          <img src={mock96x96} alt="mock 12" className={figuresStyles.logo} />
           <div className={figuresStyles.details}>
             <div className="text-extra-large text-bold-700 text-gradient">
               XXXXX
@@ -24,7 +24,7 @@ const Figures = () => {
           </div>
         </div>
         <div className={figuresStyles.item} style={{ marginTop: '2rem' }}>
-          <img src={mock96x96} className={figuresStyles.logo} />
+          <img src={mock96x96} alt="mock 13" className={figuresStyles.logo} />
           <div className={figuresStyles.details}>
             <div className="text-extra-large text-bold-700 text-gradient">
               XXXXX
@@ -40,7 +40,7 @@ const Figures = () => {
           </div>
         </div>
         <div className={figuresStyles.item} style={{ marginTop: '5rem' }}>
-          <img src={mock96x96} className={figuresStyles.logo} />
+          <img src={mock96x96} alt="mock 14" className={figuresStyles.logo} />
           <div className={figuresStyles.details}>
             <div className="text-extra-large text-bold-700 text-gradient">
               XXXXX
