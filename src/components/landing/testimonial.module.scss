@@ -1,0 +1,24 @@
+@import '../../styles/main.scss';
+
+.section {
+    background: linear-gradient(135deg, #0af .89%, #23d2b5 94.05%);
+    padding: 3.5rem 20%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.left {
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img {
+    height: 21.75rem;
+    width: auto;
+    margin: 0 4rem;
+}
