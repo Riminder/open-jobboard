@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import clippedStyles from './clippedSection.module.scss'
+import clippedStyles from './dropSection.module.scss'
 import girlImg from '../../assets/images/girl.png'
 import boyImg from '../../assets/images/boy.png'
 import times from '../../assets/images/times.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
-const ClippedSection = () => {
+const DropSection = () => {
   const [isShownRight, setIsShownRight] = useState(true)
   const [isShownLeft, setIsShownLeft] = useState(true)
 
@@ -85,4 +85,4 @@ const ClippedSection = () => {
   )
 }
 
-export default ClippedSection;
+export default DropSection;
