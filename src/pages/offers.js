@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 // import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import '../styles/main.scss'
 import Dropzone from '../components/dropzone'
 import SearchBox from '../components/searchBox'
 import Filters from '../components/filters'
+import JobList from '../components/jobList'
 
 const Offers = () => {
 	return (
@@ -23,9 +24,7 @@ const Offers = () => {
             <Filters />
           </div>
           <div className="offers">
-            <div className="card">
-              
-            </div>
+            <JobList />
           </div>
 				</div>
 			</div>
