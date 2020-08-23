@@ -12,20 +12,20 @@ import mock146x53 from '../assets/images/mock146x53.png';
 
 const Footer = () => {
   return (
-    <footer class={footerStyles.section}>
-      <div class={footerStyles.footer_top}>
+    <footer className={footerStyles.section}>
+      <div className={footerStyles.footer_top}>
         <img alt="mock 1" src={mock146x53} />
-        <span class="text-medium text-bold-700 text-center">Ullamco eu dolor irure labore.</span>
+        <span className="text-medium text-bold-700 text-center">Ullamco eu dolor irure labore.</span>
       </div>
-      <div class={footerStyles.divider}></div>
-      <div class={footerStyles.footer_bot}>
-          <div class={footerStyles.links}>
+      <div className={footerStyles.divider}></div>
+      <div className={footerStyles.footer_bot}>
+          <div className={footerStyles.links}>
             <a href="#">link</a>
             <a href="#">link</a>
             <a href="#">link</a>
             <a href="#">link</a>
           </div>
-          <div class={footerStyles.socials}>
+          <div className={footerStyles.socials}>
             <a href="#" target="blank"><img alt="linkedin" src={linkedin} /></a>
             <a href="#" target="blank"><img alt="facebook" src={facebook} /></a>
             <a href="#" target="blank"><img alt="twitter" src={twitter} /></a>

@@ -14,11 +14,11 @@ const Header = props => {
         </nav>
         {props.jambotron && (
           <div className={headerStyles.jambotron}>
-            <div class={headerStyles.jambotron__heading}>
-              <h1 class="text-extra-large text-white">Fugiat excepteur ut dolore <br></br>esse labore mollit.</h1>
-              <span class="text-medium text-white">Consectetur et officia ut Lorem elit.</span>
+            <div className={headerStyles.jambotron__heading}>
+              <h1 className="text-extra-large text-white">Fugiat excepteur ut dolore <br></br>esse labore mollit.</h1>
+              <span className="text-medium text-white">Consectetur et officia ut Lorem elit.</span>
             </div>
-            <div class={headerStyles.jambotron__img}>
+            <div className={headerStyles.jambotron__img}>
             </div>
           </div>
         )}
