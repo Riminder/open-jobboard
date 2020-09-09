@@ -1,5 +1,8 @@
 import React from 'react'
-// import { Link } from 'gatsby'
+import { connect } from "react-redux"
+import { fetchOffers } from "../store/actions/offers"
+
+
 import Layout from '../components/layout'
 import '../styles/main.scss'
 import Dropzone from '../components/dropzone'
@@ -7,13 +10,13 @@ import SearchBox from '../components/searchBox'
 import Filters from '../components/filters'
 import JobList from '../components/jobList'
 
-const Offers = () => {
+const Offers = props => {
 	return (
 		<Layout jambotron>
 			<div className="container">
 				<div className="col-33">
 					<div className="card">
-            <Dropzone />
+            <Dropzone fetchOffers={props.fetchOffers}/>
 					</div>
 					<div className="card">
             <SearchBox />
@@ -32,4 +35,8 @@ const Offers = () => {
 	)
 }
 
-export default Offers;
+const mapStateToProps = state => ({
+	offers: state.data.offers,
+  })
+
+export default connect(mapStateToProps, { fetchOffers })(Offers)
