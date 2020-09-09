@@ -13,7 +13,7 @@ const Dropzone = (props) => {
           <div className={dropzoneStyles.subtitle}>
             pour
           </div>
-          <div className="button">
+          <div className="button" onClick={props.fetchOffers}>
             Matcher Nos offres        
           </div>
         </div>
