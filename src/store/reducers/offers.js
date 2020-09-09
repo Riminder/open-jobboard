@@ -26,7 +26,7 @@ const fetchOffersSuccess = (state, action) => {
 
 const fetchOffersFail = (state, action) => {
     return updateObject( state, {
-        offers: { f: true, payload: state.offers }
+        offers: { f: true }
     });
 
 }
