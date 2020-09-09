@@ -7,15 +7,16 @@ export const fetchOffresRequest = () => {
     };
 };
 
-export const fetchOffersSuccess = () => {
+export const fetchOffersSuccess = (offers) => {
     return {
-        type: actionTypes.FETCH_OFFERS_REQUEST,
+        type: actionTypes.FETCH_OFFERS_SUCCESS,
+        offers,
     };
 };
 
 export const fetchOffersFail = () => {
     return {
-        type: actionTypes.FETCH_OFFERS_REQUEST,
+        type: actionTypes.FETCH_OFFERS_FAIL,
     };
 };
 

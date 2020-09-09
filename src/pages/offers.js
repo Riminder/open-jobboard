@@ -16,7 +16,7 @@ const Offers = props => {
 			<div className="container">
 				<div className="col-33">
 					<div className="card">
-            <Dropzone fetchOffers={props.fetchOffers}/>
+            <Dropzone fetchOffers={props.fetchOffers} offers={props.offers} />
 					</div>
 					<div className="card">
             <SearchBox />
