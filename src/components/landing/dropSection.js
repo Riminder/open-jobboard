@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, {useCallback, useState} from 'react'
+import {useDropzone} from 'react-dropzone'
+import cloudLogo from '../../assets/images/cloud.svg'
+import plusLogo from '../../assets/images/plus.svg'
 import clippedStyles from './dropSection.module.scss'
 import girlImg from '../../assets/images/girl.png'
 import boyImg from '../../assets/images/boy.png'
@@ -10,6 +13,22 @@ const DropSection = () => {
   const [isShownRight, setIsShownRight] = useState(true)
   const [isShownLeft, setIsShownLeft] = useState(true)
 
+  const onDrop = useCallback((acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
+      const reader = new FileReader()
+
+      reader.onabort = () => console.log('file reading was aborted')
+      reader.onerror = () => console.log('file reading has failed')
+      reader.onload = () => {
+      // Do whatever you want with the file contents
+        const binaryStr = reader.result
+        console.log(binaryStr)
+      }
+      reader.readAsArrayBuffer(file)
+    })
+    
+  }, [])
+  const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   return (
     <section className={clippedStyles.clipped}>
@@ -32,11 +51,47 @@ const DropSection = () => {
             </div>
           ) :
           (
-            <div className={clippedStyles.left__content_hovered}>
-     
+            <div className={clippedStyles.left__content_hovered} {...getRootProps()}>
+              <input {...getInputProps()} />
+              <div className={clippedStyles.dropping}>
+                <div className={clippedStyles.cloud_row}>
+                    <img src={cloudLogo} />
+                    <img src={cloudLogo} />
+                    <img src={cloudLogo} />
+                    <img src={cloudLogo} />
+                </div>
+                <div className={clippedStyles.cloud_row}>
+                  <div className={clippedStyles.cloud_col}>
+                      <img src={cloudLogo} />
+                      <img src={cloudLogo} />
+                  </div>
+                  
+                    <div className={clippedStyles.dropzone} >
+                      <span className="text-large bold">
+                          Glisse ton CV
+                      </span>
+                      <div id="dropzone">
+                      
+                      </div>
+                      <div className={clippedStyles.dashed}>
+                        <div className={clippedStyles.logo_wrapper}>
+                          <img src={plusLogo} alt="plus" />
+                        </div>
+                      </div>
+                    </div>
+                    <img src={cloudLogo} />
+                </div>
+                <div className="drop-message">et laisse la magie opérer</div>
+                <div className={clippedStyles.cloud_row}>
+                  <img src={cloudLogo} />
+                  <img src={cloudLogo} />
+                  <img src={cloudLogo} />
+                </div>
+              </div>
             </div>
           )
         }
+
       </div>
       <div
         className={clippedStyles.right}
