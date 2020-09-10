@@ -1,20 +1,25 @@
 import React, {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+
+import Modal from '../common/modal'
 import cloudLogo from '../../assets/images/cloud.svg'
 import plusLogo from '../../assets/images/plus.svg'
 import clippedStyles from './dropSection.module.scss'
 import girlImg from '../../assets/images/girl.png'
 import boyImg from '../../assets/images/boy.png'
 import times from '../../assets/images/times.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+
 
 const DropSection = () => {
   const [isShownRight, setIsShownRight] = useState(true)
   const [isShownLeft, setIsShownLeft] = useState(true)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
+      setModalIsOpen(true)
       const reader = new FileReader()
 
       reader.onabort = () => console.log('file reading was aborted')
@@ -140,6 +145,13 @@ const DropSection = () => {
           )
         }
       </div>
+    
+      <Modal 
+        toggleModal={setModalIsOpen}
+        modalIsOpen={modalIsOpen}
+      />
+
+    
     </section>
   )
 }

@@ -1,0 +1,42 @@
+.modal__blanket {
+    background-color: rgba(34,34,34,.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: opacity-animation .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: hidden;
+}
+.modal__blanket > div {
+    position: relative;
+    margin: auto;
+    padding: 32px;
+    padding-top: 10vh;
+    animation: motion-animation .3s ease-in-out;
+    min-height: 100%;
+}
+
+.modal__container {
+    height: 100%;
+}
+
+.modal__inner {
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 4px 14px 0 rgba(0,0,0,.2);
+    background-color: #fff;
+    border-radius: 8px;
+    width: 1000px;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__body {
+    padding: 0;
+    min-height: 40px;
+    height: 100%;
+}
