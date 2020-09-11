@@ -1,9 +1,27 @@
 @import './helpers.scss';
-
-
 * {
     box-sizing: border-box;
 }
+
+
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(1turn)
+    }
+}
+
 
 body {
     margin: 0;
@@ -78,6 +96,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.ml-1 {
+    margin-left: 1rem;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -121,6 +143,19 @@ body {
     background: #4badad;
     border-radius: .25rem;
     color: white;
+    border-width: unset;
+    border-style: none;
+    cursor: pointer;
+}
+
+.button.button--light {
+    background: transparent;
+    color: #4badad;
+    border: 1px solid #4badad;
+}
+
+.button:hover {
+    opacity: 0.9;
 }
 
 .fancy-checkbox {
@@ -157,4 +192,14 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .loader {
+    border: 2px solid #fff;
+    border-top-color: #dadada;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite
   }

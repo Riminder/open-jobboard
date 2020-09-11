@@ -36,7 +36,7 @@ const Offers = props => {
 }
 
 const mapStateToProps = state => ({
-	offers: state.data.offers,
+	offers: state.offers.offers,
   })
 
 export default connect(mapStateToProps, { fetchOffers })(Offers)

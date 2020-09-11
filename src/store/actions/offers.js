@@ -1,7 +1,7 @@
 import * as actionTypes from './types';
 import axios from '../../utils/axios';
 
-export const fetchOffresRequest = () => {
+export const fetchOffersRequest = () => {
     return {
         type: actionTypes.FETCH_OFFERS_REQUEST,
     };
@@ -22,7 +22,7 @@ export const fetchOffersFail = () => {
 
 export const fetchOffers = () => {
     return dispatch => {
-        dispatch(fetchOffresRequest());
+        dispatch(fetchOffersRequest());
         axios.get( 'jobs/searching')
             .then( res => {
                 const fetchedOffers = [];

@@ -1,4 +1,7 @@
 import React from "react"
+import { connect } from "react-redux"
+import { addProfile } from "../store/actions/profile"
+
 import Layout from '../components/layout'
 import DropSection from '../components/landing/dropSection'
 import Testimonial from '../components/landing/testimonial'
@@ -8,10 +11,10 @@ import Videos from '../components/landing/videos'
 
 
 
-export default function Home() {
+const Home = props => {
   return (
     <Layout>
-      <DropSection />
+      <DropSection addProfile={props.addProfile} profile={props.profile} />
       <Testimonial />
       <Cards />
       <Testimonial reversed/>
@@ -20,3 +23,9 @@ export default function Home() {
     </Layout>
   );
 }
+
+const mapStateToProps = state => ({
+	profile: state.profile.profile,
+  })
+
+export default connect(mapStateToProps, { addProfile })(Home)

@@ -12,11 +12,11 @@ import boyImg from '../../assets/images/boy.png'
 import times from '../../assets/images/times.svg'
 
 
-const DropSection = () => {
+const DropSection = (props) => {
   const [isShownRight, setIsShownRight] = useState(true)
   const [isShownLeft, setIsShownLeft] = useState(true)
   const [modalIsOpen, setModalIsOpen] = useState(false)
-
+  const [profileFile, setProfileFile] = useState("");
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       setModalIsOpen(true)
@@ -30,9 +30,14 @@ const DropSection = () => {
         console.log(binaryStr)
       }
       reader.readAsArrayBuffer(file)
+      setProfileFile(file)
     })
     
   }, [])
+
+  const postProfile = () => {
+    props.addProfile(profileFile)
+  }
   const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   return (
@@ -149,6 +154,8 @@ const DropSection = () => {
       <Modal 
         toggleModal={setModalIsOpen}
         modalIsOpen={modalIsOpen}
+        postProfile={postProfile}
+        profile={props.profile}
       />
 
     
