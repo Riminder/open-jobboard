@@ -146,6 +146,7 @@ body {
     border-width: unset;
     border-style: none;
     cursor: pointer;
+    min-width: 103px;
 }
 
 .button.button--light {
@@ -163,6 +164,7 @@ body {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   .fancy-checkbox__image {
     width: 1.3rem!important;

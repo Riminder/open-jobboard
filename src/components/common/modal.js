@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Checkbox } from 'react-input-checkbox'
 import OutsideClickHandler from 'react-outside-click-handler'
 import 'react-input-checkbox/lib/react-input-checkbox.min.css'
@@ -8,6 +8,13 @@ import ModalStyles from './modal.module.scss'
 
 
 const Modal = (props) => {
+  const [isConsentOwner, setIsConsentOwner] = useState(false)
+  const [isConsentController, setIsConsentController] = useState(false)
+  useEffect(() => {
+    if (!isConsentOwner) {
+      setIsConsentController(false)
+    }
+  }, [isConsentOwner])
 
   if (props.modalIsOpen) {
     return (
@@ -37,8 +44,8 @@ const Modal = (props) => {
                     <div className={ModalStyles.control}>
                       <Checkbox 
                         theme="fancy-checkbox"
-                        value={false}
-                        onChange={() => {}}
+                        value={isConsentOwner}
+                        onChange={() => setIsConsentOwner(!isConsentOwner)}
                       >
                         In sunt magna consequat ex esse consectetur dolor irure est sunt dolor non ex fugiat.
                       </Checkbox>
@@ -46,8 +53,9 @@ const Modal = (props) => {
                     <div className={ModalStyles.control}>
                       <Checkbox 
                         theme="fancy-checkbox"
-                        value={true}
-                        onChange={() => {}}
+                        value={isConsentController}
+                        onChange={() => setIsConsentController(!isConsentController)}
+                        disabled={!isConsentOwner}
                       >
                         Ipsum nisi labore do excepteur cupidatat eiusmod esse ex.
                       </Checkbox>
@@ -58,9 +66,9 @@ const Modal = (props) => {
                     <button
                       className="button ml-1"
                       onClick={() => props.postProfile()}
-                      disabled={props.profile?.r}
+                      disabled={ props.profile?.r}
                     >
-                      {true ? <span className="loader"></span> : 'CONFIRMER'}
+                      {props.profile?.r ? <span className="loader"></span> : 'CONFIRMER'}
                     </button>
                   </div>
                 </div>
