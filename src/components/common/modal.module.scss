@@ -33,10 +33,27 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    padding: 3rem;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .modal__body {
     padding: 0;
     min-height: 40px;
     height: 100%;
+}
+
+.text__box {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    height: 25rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    overflow-y: auto;
+    background: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
 }
