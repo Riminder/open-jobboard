@@ -1,7 +1,11 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useState, useEffect} from 'react'
+import { Link } from 'gatsby'
+
 import {useDropzone} from 'react-dropzone'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+import swal from 'sweetalert'
+
 
 import Modal from '../common/modal'
 import cloudLogo from '../../assets/images/cloud.svg'
@@ -17,6 +21,31 @@ const DropSection = (props) => {
   const [isShownLeft, setIsShownLeft] = useState(true)
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [profileFile, setProfileFile] = useState("");
+  useEffect(() => {
+    if(props.profile?.s) {
+      setModalIsOpen(false)
+      swal({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success",
+      });
+      // Swal.fire({
+      //   title: 'Vérifie ta boite mail.',
+      //   html: 'Tu viens de recevoir un message de la part d\'ENGIE.',
+      //   type: 'success',
+      //   confirmButtonColor: '#00aaff',
+      // });
+    }
+    if(props.profile.f) {
+      swal(
+        {
+         type: 'erreur',
+         title: 'Oops...',
+         text: 'Une erreur s\'est produite. Veuillez réessayer',
+        }
+       )
+    }
+  }, [props.profile])
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       setModalIsOpen(true)
@@ -35,10 +64,10 @@ const DropSection = (props) => {
     
   }, [])
 
-  const postProfile = () => {
-    props.addProfile(profileFile)
-  }
   const {getRootProps, getInputProps} = useDropzone({onDrop})
+  const postProfile = (consentController) => {
+    props.addProfile(profileFile, consentController)
+  }
 
   return (
     <section className={clippedStyles.clipped}>
@@ -137,9 +166,9 @@ const DropSection = (props) => {
                 <img src={times} alt="times 6" />
                 <img src={times} alt="times 7" />
               </span>
-              <span className={`${clippedStyles.row} text-large text-right`}>
+              <Link to="/offers" className={`${clippedStyles.row} text-white text-large text-right`}>
                 Accède à nos offres <FontAwesomeIcon className="icon-right" icon={faLongArrowAltRight} />
-              </span>
+              </Link>
               <span className={clippedStyles.row}>
                 <img src={times} alt="times 8" />
                 <img src={times} alt="times 9" />

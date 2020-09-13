@@ -65,8 +65,8 @@ const Modal = (props) => {
                     <button className="button button--light">ANNULER</button>
                     <button
                       className="button ml-1"
-                      onClick={() => props.postProfile()}
-                      disabled={ props.profile?.r}
+                      onClick={() => props.postProfile(isConsentController)}
+                      disabled={props.profile?.r || !isConsentOwner}
                     >
                       {props.profile?.r ? <span className="loader"></span> : 'CONFIRMER'}
                     </button>
