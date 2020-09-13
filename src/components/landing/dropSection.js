@@ -151,7 +151,7 @@ const DropSection = (props) => {
           )
           :
           (
-            <div className={clippedStyles.right__content_hovered}>
+            <Link to="/offers" className={clippedStyles.right__content_hovered}>
               <span className={clippedStyles.row}>
                 <img src={times} alt="times 1" />
                 <img src={times} alt="times 2" />
@@ -166,16 +166,16 @@ const DropSection = (props) => {
                 <img src={times} alt="times 6" />
                 <img src={times} alt="times 7" />
               </span>
-              <Link to="/offers" className={`${clippedStyles.row} text-white text-large text-right`}>
+              <span className={`${clippedStyles.row} text-large text-right`}>
                 Accède à nos offres <FontAwesomeIcon className="icon-right" icon={faLongArrowAltRight} />
-              </Link>
+              </span>
               <span className={clippedStyles.row}>
                 <img src={times} alt="times 8" />
                 <img src={times} alt="times 9" />
                 <img src={times} alt="times 10" />
                 <img src={times} alt="times 11" />
               </span>
-            </div>
+            </Link>
           )
         }
       </div>
