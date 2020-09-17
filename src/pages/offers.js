@@ -19,7 +19,18 @@ const Offers = props => {
             <Dropzone fetchOffers={props.fetchOffers} offers={props.offers} />
 					</div>
 					<div className="card">
-            <SearchBox />
+						<SearchBox
+							skills={
+								{
+									enabled: [
+										{name: 'python', value: null}
+									],
+									disabled: [
+										{name: 'microsoft', value: null}
+									],
+								}
+							}
+						/>
 					</div>
 				</div>
 				<div className="col-67">

@@ -22,5 +22,30 @@
             position: relative;
             outline: none;
         }
+        .creatables {
+            .choices {
+                padding: 0;
+                display: flex;
+                list-style: none;
+                margin: 0 0 0.5rem;
+                .choice {
+                    border: 1px solid #4badad;
+                    border-radius: 2px;
+                    margin: 4px 6px 2px 0;
+                    padding: 5px 8px;
+                    font-size: 12px;
+                    transition: .4s;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    background-color: #4badad;
+                }
+                .disabled {
+                    background: white;
+                    color: #4badad;
+                }
+            }
+        }
     }
 }

@@ -5,9 +5,17 @@ import { updateObject } from '../../utils/utils';
 const initialState = {
     offers: {},
     skills: [],
+    languages: [],
+    jobs: [],
+    locations: {},
 }
 
 const addSkill = (state, action) => {
+    const skills = state.push(action.skill);
+    return {...state, skills }
+}
+
+const removeSkill = (state, action) => {
     const skills = state.push(action.skill);
     return {...state, skills }
 }
