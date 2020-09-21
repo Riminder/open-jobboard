@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://hrflow.ai">
-    <img alt="Gatsby" src="https://img.riminder.net/logo-hrflow.svg" width="60" />
+    <img alt="hrflow" src="https://img.riminder.net/logo-hrflow.svg" width="120" />
   </a>
 </p>
 <h1 align="center">
