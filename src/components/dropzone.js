@@ -2,7 +2,6 @@ import React from 'react'
 import dropzoneStyles from './dropzone.module.scss'
 import logo from '../assets/images/file_upload.svg'
 const Dropzone = (props) => {
-  console.log('offers', props.offers)
 
   return (
     <div className={dropzoneStyles.dropzone}>
@@ -15,7 +14,7 @@ const Dropzone = (props) => {
           <div className={dropzoneStyles.subtitle}>
             pour
           </div>
-          <div className="button" onClick={props.fetchOffers}>
+          <div className="button" onClick={props.fetchJobs}>
             Matcher Nos offres        
           </div>
         </div>
