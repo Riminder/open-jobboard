@@ -1,0 +1,52 @@
+.search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__control {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        .label {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;        
+        }
+        .input {
+            height: 34px;
+            border: 1px solid #d3d6dd;
+            border-radius: 2px;
+            padding-left: 10px;
+            z-index: 2;
+            background: transparent;
+            position: relative;
+            outline: none;
+        }
+        .creatables {
+            .choices {
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0 0 0.5rem;
+                .choice {
+                    border: 1px solid #4badad;
+                    border-radius: 2px;
+                    margin: 4px 6px 2px 0;
+                    padding: 5px 8px;
+                    font-size: 12px;
+                    transition: .4s;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    background-color: #4badad;
+                }
+                .disabled {
+                    background: white;
+                    color: #4badad;
+                }
+            }
+        }
+    }
+}
