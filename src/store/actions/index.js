@@ -1,13 +1,13 @@
 export { 
-    fetchOffers,
-    fetchOffersRequest,
-    fetchOffersSuccess,
-    fetchOffersFail
-} from './offers';
+    fetchJobs,
+    fetchJobsRequest,
+    fetchJobsSuccess,
+    fetchJobsFail
+} from './jobs';
 
 export { 
     addProfile,
     addProfileRequest,
     addProfileSuccess,
     addProfileFail
-} from './offers';
+} from './jobs';

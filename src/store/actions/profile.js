@@ -1,5 +1,8 @@
+import { navigate } from 'gatsby';  
 import * as actionTypes from './types';
+import { updateBoardFilters } from './jobs'
 import axios from '../../utils/axios';
+import { removeOccurrences } from '../../utils/utils'
 
 export const addProfileRequest = () => {
     return {
@@ -7,10 +10,10 @@ export const addProfileRequest = () => {
     };
 };
 
-export const addProfileSuccess = (offers) => {
+export const addProfileSuccess = (profile) => {
     return {
         type: actionTypes.ADD_PROFILE_SUCCESS,
-        offers,
+        profile,
     };
 };
 
@@ -26,20 +29,54 @@ export const addProfile = (payload) => {
         console.log('payload', payload);
         const fd = new FormData();
         fd.append('file', payload);
-        fd.append('source_key', "9e1e9ce19e0b6549538b07620259b9ca4d391340");
+        fd.append('source_key', "a0e7f695155578e403d9cbad094a802706f21bc9");
         fd.append('sync_parsing', 1);
         axios.post( 'profile/parsing/file', fd)
             .then( res => {
-                const fetchedOffers = [];
-                for ( let key in res.data ) {
-                    fetchedOffers.push( {
-                        ...res.data[key],
-                        id: key
-                    } );
+                dispatch(addProfileSuccess(res));
+                const profile = res.data.data.profile;
+                const parsing = res.data.data.parsing;
+                localStorage.setItem('profile', JSON.stringify(profile));
+                localStorage.setItem('parsing', JSON.stringify(parsing));
+                let experiences = [];
+                parsing.experiences.forEach(experience => {
+                    experience.title && experiences.push({ text: experience.title, checked: false });
+                });
+                experiences = removeOccurrences(experiences);
+                experiences[0].checked = true;
+
+                let locations = [];
+                if(parsing.location.text) {
+                    locations.push({
+                        text: parsing.location.text,
+                        lat: parsing.location.lat,
+                        lng: parsing.location.lng
+                    })
                 }
-                dispatch(addProfileSuccess(fetchedOffers));
-            } )
+                parsing.experiences.forEach(experience => {
+                    experience.location.text && locations.push({
+                        text: experience.location.text,
+                        lat: experience.location.lat,
+                        lng: experience.location.lng,
+                        checked: false
+                    })
+                });
+                locations = removeOccurrences(locations);
+                locations[0].checked = true;
+
+                const boardFilters = {
+                    skills: {enabled: parsing.skills.map(item => item.name), disabled: [] },
+                    languages: {enabled: parsing.languages.map(item => item.name), disabled: [] },
+                    experiences,
+                    locations,
+                };
+
+                localStorage.setItem('boardFilters', JSON.stringify(boardFilters));
+                dispatch(updateBoardFilters(boardFilters));
+                navigate('/jobs');
+            })
             .catch( err => {
+                console.log('err', err)
                 dispatch(addProfileFail(err));
             } );
     };

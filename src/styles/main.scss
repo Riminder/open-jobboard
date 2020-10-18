@@ -110,9 +110,11 @@ body {
     .col-33 {
         flex: 1 1 33%;
         margin-right: 4rem;
+        max-width: 33%;
     }
     .col-67 {
         flex: 1 1 67%;
+        max-width: 67%;
     }
 }
 
