@@ -151,7 +151,7 @@ const DropSection = (props) => {
           )
           :
           (
-            <Link to="/offers" className={clippedStyles.right__content_hovered}>
+            <Link to="/jobs" className={clippedStyles.right__content_hovered}>
               <span className={clippedStyles.row}>
                 <img src={times} alt="times 1" />
                 <img src={times} alt="times 2" />
