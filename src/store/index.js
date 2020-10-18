@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import offersReducer from './reducers/offers'
+import jobsReducer from './reducers/jobs'
 import profileReducer from './reducers/profile'
 
 export default combineReducers({ 
-    offers: offersReducer,
+    jobs: jobsReducer,
     profile: profileReducer 
 })
