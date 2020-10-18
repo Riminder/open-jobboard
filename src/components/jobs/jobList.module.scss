@@ -1,0 +1,50 @@
+.job {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+.job__info {
+    flex: 1 1 auto;
+}
+
+.job__info_company {
+    color: #4badad;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.job__info_title {
+    margin: 1rem 0 0.5rem 0;
+    max-width: 36rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.job__info_details {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    list-style: none;
+    color: rgba(151, 153, 157, 0.7);
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.details__item {
+    margin-right: 1rem;
+    max-width: 10rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
