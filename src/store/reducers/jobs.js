@@ -33,9 +33,6 @@ const boardFilters = localStorage.getItem('boardFilters') || {
 
 const initialState = {
     jobs: {},
-    skills: [],
-    languages: [],
-    locations: {},
     queryObject,
     boardFilters: JSON.parse(boardFilters)
 }
@@ -45,15 +42,6 @@ const updateBoardFilters = (state, action) => {
     return updateObject(state, { 
         boardFilters: action.boardFilters,
     })
-}
-const addSkill = (state, action) => {
-    const skills = state.push(action.skill);
-    return {...state, skills }
-}
-
-const removeSkill = (state, action) => {
-    const skills = state.push(action.skill);
-    return {...state, skills }
 }
 
 const fetchJobsRequest = (state, action) => {
@@ -77,7 +65,6 @@ const fetchJobsFail = (state, action) => {
 
 const jobsReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
-        case actionTypes.ADD_SKILL: return addSkill( state, action );
         case actionTypes.FETCH_JOBS_REQUEST: return fetchJobsRequest( state, action );
         case actionTypes.FETCH_JOBS_SUCCESS: return fetchJobsSuccess( state, action );
         case actionTypes.FETCH_JOBS_FAIL: return fetchJobsFail( state, action );
