@@ -14,6 +14,8 @@ const SearchBox = (props) => {
 
   const inputSkillsRef = useRef(null);
   const inputLanguagesRef = useRef(null);
+  const inputLocationsRef = useRef(null);
+  const inputExperiencesRef = useRef(null);
 
   const handleCreatableKeyPress = (event) => {
     const value = event.target.value
@@ -65,7 +67,7 @@ const SearchBox = (props) => {
         newBoardFilters[`${name}`].unshift({text: value, checked: true})
       }
       setBoardFilters(newBoardFilters)
-      // inputSkillsRef.current.value = null
+      inputExperiencesRef.current.value = null
       // inputLanguagesRef.current.value = null
     }
   }
@@ -73,7 +75,12 @@ const SearchBox = (props) => {
     <div className={styles.search}>
       <div className={styles.search__control}>
         <div className={styles.label}>Lieu(x) désiré(s)</div>
-        <input type="text" className={styles.input} placeholder="Saisir une ville" />
+        <input
+          type="text"
+          className={styles.input}
+          placeholder="Saisir une ville"
+          ref={inputLanguagesRef}
+        />
         {boardFilters?.locations?.map((location, index) => {
           return (
             <Checkbox 
@@ -140,6 +147,7 @@ const SearchBox = (props) => {
           placeholder="Ajouter un métier"
           onKeyPress={event => handleCheckableKeyPress(event)}
           name="experiences"
+          ref={inputExperiencesRef}
         />
         {boardFilters?.experiences?.map((experience, index) => {
           return (
