@@ -4,6 +4,8 @@ import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Checkbox } from 'react-input-checkbox'
 import 'react-input-checkbox/lib/react-input-checkbox.min.css'
 
+import SearchLocationInput from './SearchLocationInput'
+
 import styles from './searchBox.module.scss';
 
 const SearchBox = (props) => {
@@ -49,12 +51,21 @@ const SearchBox = (props) => {
 
   const onChangeSelected = (name, value, index) => {
     const newBoardFilters = {...boardFilters}
+    console.log('newboardfilters', newBoardFilters)
     if(name === 'locations') {
       newBoardFilters[`${name}`].forEach(item => item.checked = false)
     }
     newBoardFilters[`${name}`][index].checked = value;
     setBoardFilters(newBoardFilters)
   }
+  const handleChangeLocationInput = (location) => {
+    const newBoardFilters = {...boardFilters}
+    console.log('newboardfilters', newBoardFilters)
+    // newBoardFilters.locations.forEach(item => item.checked = false)
+    // newBoardFilters.locations.unshift(location)
+    // setBoardFilters(newBoardFilters)
+
+  } 
 
   const handleCheckableKeyPress = (event) => {
     const value = event.target.value
@@ -75,11 +86,14 @@ const SearchBox = (props) => {
     <div className={styles.search}>
       <div className={styles.search__control}>
         <div className={styles.label}>Lieu(x) désiré(s)</div>
-        <input
+        {/* <input
           type="text"
           className={styles.input}
           placeholder="Saisir une ville"
           ref={inputLanguagesRef}
+        /> */}
+        <SearchLocationInput
+          changeLocation={() => handleChangeLocationInput()}
         />
         {boardFilters?.locations?.map((location, index) => {
           return (
