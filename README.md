@@ -9,8 +9,7 @@
   Open source job board
 </h1>
 
-(https://img.shields.io/github/v/release/Riminder/open-jobboard) ![]
-(https://img.shields.io/github/license/Riminder/open-jobboard) ![]
+![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)
 
 ## 🚀 Quick start
 
