@@ -1,3 +1,5 @@
+@import "../../styles/helpers.scss";
+
 .job {
     width: 100%;
     display: flex;
@@ -12,7 +14,7 @@
 }
 
 .job__info_company {
-    color: #4badad;
+    color: $primary;
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 600;

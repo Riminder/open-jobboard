@@ -26,7 +26,6 @@ export const addProfileFail = () => {
 export const addProfile = (payload) => {
     return dispatch => {
         dispatch(addProfileRequest());
-        console.log('payload', payload);
         const fd = new FormData();
         fd.append('file', payload);
         fd.append('source_key', "a0e7f695155578e403d9cbad094a802706f21bc9");
@@ -67,7 +66,7 @@ export const addProfile = (payload) => {
                 const boardFilters = {
                     skills: {enabled: parsing.skills.map(item => item.name), disabled: [] },
                     languages: {enabled: parsing.languages.map(item => item.name), disabled: [] },
-                    experiences,
+                    jobs: experiences,
                     locations,
                 };
 

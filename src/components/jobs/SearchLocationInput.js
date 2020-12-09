@@ -54,7 +54,7 @@ function SearchLocationInput(props) {
 
   useEffect(() => {
     loadScript(
-      `https://maps.googleapis.com/maps/api/js?key=AIzaSyCrYl2Cb011T2d2Ym1YvQyNNL2tEiU_AOM&libraries=places`,
+      `https://maps.googleapis.com/maps/api/js?key=AIzaSyB1DEVrCX9FpA0SnoWFUIgyh1og2RF-8NI&libraries=places`,
       () => handleScriptLoad(setQuery, autoCompleteRef, props.changeLocation)
     );
   }, []);
@@ -66,6 +66,7 @@ function SearchLocationInput(props) {
         onChange={event => setQuery(event.target.value)}
         placeholder="Saisir une ville"
         // value={query}
+        className="input"
       />
     </div>
   );

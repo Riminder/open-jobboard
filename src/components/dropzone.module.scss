@@ -1,4 +1,4 @@
-// @import '../styles/helpers.scss';
+@import "../styles/helpers.scss";
 
 
 .dropzone {
@@ -22,7 +22,7 @@
         transition: transform 0.3s;
     }
     .dropzone__inner {
-        border: 2px dashed #4badad;
+        border: 2px dashed $primary;
         height: 100%;
         width: 100%;
         display: block;

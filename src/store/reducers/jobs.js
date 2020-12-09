@@ -20,9 +20,9 @@ const queryObject = localStorage.getItem('queryObject') || {
     status: true,
 }
 
-const boardFilters = localStorage.getItem('boardFilters') || {
-    skills: [],
-    languages: [],
+const boardFilters = JSON.parse(localStorage.getItem('boardFilters')) || {
+    skills: {enabled: [], disabled: []},
+    languages: {enabled: [], disabled: []},
     jobs: [],
     locations: [],
     categories: [],
@@ -34,11 +34,12 @@ const boardFilters = localStorage.getItem('boardFilters') || {
 const initialState = {
     jobs: {},
     queryObject,
-    boardFilters: JSON.parse(boardFilters)
+    boardFilters: boardFilters
 }
 
 
 const updateBoardFilters = (state, action) => {
+    localStorage.setItem('boardFilters', JSON.stringify(boardFilters))
     return updateObject(state, { 
         boardFilters: action.boardFilters,
     })

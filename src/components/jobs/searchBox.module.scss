@@ -1,3 +1,4 @@
+@import "../../styles/helpers.scss";
 .search {
     width: 100%;
     display: flex;
@@ -31,7 +32,7 @@
                 list-style: none;
                 margin: 0 0 0.5rem;
                 .choice {
-                    border: 1px solid #4badad;
+                    border: 1px solid $primary;
                     border-radius: 2px;
                     margin: 4px 6px 2px 0;
                     padding: 5px 8px;
@@ -41,11 +42,11 @@
                     display: flex;
                     align-items: center;
                     color: white;
-                    background-color: #4badad;
+                    background-color: $primary;
                 }
                 .disabled {
                     background: white;
-                    color: #4badad;
+                    color: $primary;
                 }
             }
         }

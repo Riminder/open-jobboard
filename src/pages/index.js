@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { addProfile } from "../store/actions/profile"
+import '../styles/main.scss'
 
 import Layout from '../components/layout'
 import DropSection from '../components/landing/dropSection'
@@ -8,6 +9,7 @@ import Testimonial from '../components/landing/testimonial'
 import Cards from '../components/landing/cards'
 import Figures from '../components/landing/figures'
 import Videos from '../components/landing/videos'
+
 
 
 

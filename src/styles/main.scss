@@ -142,7 +142,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4badad;
+    background: $primary;
     border-radius: .25rem;
     color: white;
     border-width: unset;
@@ -153,8 +153,8 @@ body {
 
 .button.button--light {
     background: transparent;
-    color: #4badad;
-    border: 1px solid #4badad;
+    color: $primary;
+    border: 1px solid $primary;
 }
 
 .button:hover {
@@ -211,3 +211,108 @@ body {
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite
   }
+
+  .toggle-switch {
+    margin-left: 10px;
+    position: relative;
+    width: 75px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-align: left;
+    &-checkbox {
+      display: none;
+    }
+    &-label {
+      display: block;
+      overflow: hidden;
+      cursor: pointer;
+      border: 0 solid #bbb;
+      border-radius: 20px;
+      margin: 0;
+    }
+    &-inner {
+      display: block;
+      width: 200%;
+      margin-left: -100%;
+      transition: margin 0.3s ease-in 0s;
+      &:before,
+      &:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 25px;
+        padding: 0;
+        line-height: 25px;
+        font-size: 14px;
+        color: white;
+        font-weight: bold;
+        box-sizing: border-box;
+      }
+      &:before {
+        content: "Oui";
+        text-transform: uppercase;
+        padding-left: 10px;
+        background-color: $primary;
+        color: #fff;
+      }
+    }
+    &-disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+      &:before {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+    &-inner:after {
+      content: "Non";
+      text-transform: uppercase;
+      padding-right: 10px;
+      background-color: #bbb;
+      color: #fff;
+      text-align: right;
+    }
+    &-switch {
+      display: block;
+      width: 18px;
+      margin: 3px;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 48px;
+      border: 0 solid #bbb;
+      border-radius: 20px;
+      transition: all 0.3s ease-in 0s;
+    }
+    &-checkbox:checked + &-label {
+      .toggle-switch-inner {
+        margin-left: 0;
+      }
+      .toggle-switch-switch {
+        right: 0px;
+      }
+    }
+  }
+
+  .search-control {
+    .fancy-checkbox {
+        padding-left: 2em!important;
+    }
+  }
+
+  .input {
+    height: 34px;
+    border: 1px solid #d3d6dd;
+    border-radius: 2px;
+    padding-left: 10px;
+    z-index: 2;
+    background: transparent;
+    position: relative;
+    outline: none;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}

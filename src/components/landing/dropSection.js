@@ -25,8 +25,8 @@ const DropSection = (props) => {
     if(props.profile?.s) {
       setModalIsOpen(false)
       swal({
-        title: "Good job!",
-        text: "You clicked the button!",
+        title: "Title success",
+        text: "Message success!",
         icon: "success",
       });
       // Swal.fire({
@@ -39,9 +39,9 @@ const DropSection = (props) => {
     if(props.profile.f) {
       swal(
         {
-         type: 'erreur',
+         type: 'error',
          title: 'Oops...',
-         text: 'Une erreur s\'est produite. Veuillez réessayer',
+         text: 'Message error',
         }
        )
     }

@@ -7,6 +7,7 @@ const Filters = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
   const [selectedCompanies, setSelectedCompanies] = useState([])
   const [selectedOrder, setSelectedOrder] = useState([])
+  const [checked, setChecked] = useState(false)
 
   const ChangeSelectedCategriesHandler = item => {
     setSelectedCategories(prevCategories => {
@@ -35,7 +36,6 @@ const Filters = () => {
   const ChangeSelectedOrderHandler = item => {
     setSelectedOrder(item);
   }
-
   return (
     <div className={styles.filters}>
       <div className={styles.filters__dropdowns}>
@@ -44,8 +44,21 @@ const Filters = () => {
         <Dropdown options={orders} selectedItems={selectedOrder} onChangeSelected={ChangeSelectedOrderHandler} title="Trier par" />
       </div>
       <div className={styles.filters__switcher}>
-        <label>Activer la recommandation</label>
-        <input type="checkbox" />
+        Recommandation
+        <div className="toggle-switch">
+          <input
+            type="checkbox"
+            className="toggle-switch-checkbox"
+            name="toggleSwitch"
+            id="toggleSwitch"
+            checked={checked}
+            onChange={e => setChecked(e.target.checked)}
+          />
+          <label className="toggle-switch-label" htmlFor="toggleSwitch">
+            <span className="toggle-switch-inner" />
+            <span className="toggle-switch-switch" />
+          </label>
+        </div>
       </div>
     </div>
   )

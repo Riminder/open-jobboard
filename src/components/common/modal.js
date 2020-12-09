@@ -62,7 +62,12 @@ const Modal = (props) => {
                     </div>
                   </div>
                   <div className={ModalStyles.buttons}>
-                    <button className="button button--light">ANNULER</button>
+                    <button
+                      className="button button--light"
+                      onClick={() => props.toggleModal(false)}
+                    >
+                      ANNULER
+                    </button>
                     <button
                       className="button ml-1"
                       onClick={() => props.postProfile(isConsentController)}

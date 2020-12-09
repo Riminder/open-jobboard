@@ -9,10 +9,23 @@ import SearchLocationInput from './SearchLocationInput'
 import styles from './searchBox.module.scss';
 
 const SearchBox = (props) => {
-  const [boardFilters, setBoardFilters] = useState([])
+  const [boardFilters, setBoardFilters] = useState({})
+  const [location, setLocation] = useState(null)
   useEffect(() => {
     setBoardFilters(props.boardFilters)
   }, [props.boardFilters])
+
+  useEffect(() => {
+    if(location) {
+      const newBoardFilters = {...boardFilters}
+      if(newBoardFilters.hasOwnProperty('locations')) {
+        newBoardFilters.locations.forEach(item => item.checked = false);
+        newBoardFilters.locations.unshift({...location, checked: true});
+      }
+      setBoardFilters(newBoardFilters)
+      props.fetchJobs(newBoardFilters)
+    }
+  }, [location])
 
   const inputSkillsRef = useRef(null);
   const inputLanguagesRef = useRef(null);
@@ -28,6 +41,7 @@ const SearchBox = (props) => {
       setBoardFilters(newBoardFilters)
       inputSkillsRef.current.value = null
       inputLanguagesRef.current.value = null
+      props.fetchJobs(newBoardFilters)
     }
   }
 
@@ -38,6 +52,7 @@ const SearchBox = (props) => {
     })
     newBoardFilters[`${name}`].disabled.unshift(item)
     setBoardFilters(newBoardFilters)
+    props.fetchJobs(newBoardFilters)
   }
 
   const addItem = (name, item) => {
@@ -47,24 +62,20 @@ const SearchBox = (props) => {
       return item !== f
     })
     setBoardFilters(newBoardFilters)
+    props.fetchJobs(newBoardFilters)
   }
 
   const onChangeSelected = (name, value, index) => {
     const newBoardFilters = {...boardFilters}
-    console.log('newboardfilters', newBoardFilters)
     if(name === 'locations') {
       newBoardFilters[`${name}`].forEach(item => item.checked = false)
     }
     newBoardFilters[`${name}`][index].checked = value;
     setBoardFilters(newBoardFilters)
+    props.fetchJobs(newBoardFilters)
   }
   const handleChangeLocationInput = (location) => {
-    const newBoardFilters = {...boardFilters}
-    console.log('newboardfilters', newBoardFilters)
-    // newBoardFilters.locations.forEach(item => item.checked = false)
-    // newBoardFilters.locations.unshift(location)
-    // setBoardFilters(newBoardFilters)
-
+    setLocation(location)
   } 
 
   const handleCheckableKeyPress = (event) => {
@@ -75,25 +86,20 @@ const SearchBox = (props) => {
       if (name === 'locations') {
         newBoardFilters[`${name}`].forEach(item => item.checked = false)
       } else {
+        newBoardFilters[`${name}`].forEach(item => item.checked = false)
         newBoardFilters[`${name}`].unshift({text: value, checked: true})
       }
       setBoardFilters(newBoardFilters)
+      props.fetchJobs(newBoardFilters)
       inputExperiencesRef.current.value = null
-      // inputLanguagesRef.current.value = null
     }
   }
   return (
     <div className={styles.search}>
-      <div className={styles.search__control}>
+      <div className={`${styles.search__control} search-control`}>
         <div className={styles.label}>Lieu(x) désiré(s)</div>
-        {/* <input
-          type="text"
-          className={styles.input}
-          placeholder="Saisir une ville"
-          ref={inputLanguagesRef}
-        /> */}
         <SearchLocationInput
-          changeLocation={() => handleChangeLocationInput()}
+          changeLocation={location => handleChangeLocationInput(location)}
         />
         {boardFilters?.locations?.map((location, index) => {
           return (
@@ -108,7 +114,7 @@ const SearchBox = (props) => {
           )
         })}
       </div>
-      <div className={styles.search__control}>
+      <div className={`${styles.search__control} search-control`}>
         <div className={styles.label}>Mes compétences</div>
         <input
           type="text"
@@ -153,30 +159,30 @@ const SearchBox = (props) => {
           </ul>
         </div>
       </div>
-      <div className={styles.search__control}>
+      <div className={`${styles.search__control} search-control`}>
         <div className={styles.label}>Métier(s) souhaité(s)</div>
         <input
           type="text"
           className={styles.input}
           placeholder="Ajouter un métier"
           onKeyPress={event => handleCheckableKeyPress(event)}
-          name="experiences"
+          name="jobs"
           ref={inputExperiencesRef}
         />
-        {boardFilters?.experiences?.map((experience, index) => {
+        {boardFilters?.jobs?.map((experience, index) => {
           return (
             <Checkbox
               key={`exp-${index}`}
               theme="fancy-checkbox"
               value={experience.checked}
-              onChange={() => onChangeSelected('experiences', !experience.checked, index)}
+              onChange={() => onChangeSelected('jobs', !experience.checked, index)}
             >
               {experience.text}
             </Checkbox>
           )
         })}
       </div>
-      <div className={styles.search__control}>
+      <div className={`${styles.search__control} search-control`}>
         <div className={styles.label}>Mes langues</div>
         <input
           type="text"
