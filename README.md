@@ -1,4 +1,5 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+
 <p align="center">
   <a href="https://hrflow.ai">
     <img alt="hrflow" src="https://img.riminder.net/logo-hrflow.svg" width="120" />
@@ -8,6 +9,8 @@
   Open source job board
 </h1>
 
+(https://img.shields.io/github/v/release/Riminder/open-jobboard) ![]
+(https://img.shields.io/github/license/Riminder/open-jobboard) ![]
 
 ## 🚀 Quick start
 
