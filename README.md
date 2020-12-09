@@ -63,13 +63,14 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+
   This directory contains:
-      **`assets`** All your assets files like images, fonts, icons... goes here.
-      **`components`** Contains all the app functional components.
-      **`hooks`** Contains some custom hooks.
-      **`pages`** Contains the app main containers (website pages)
-      **`store`** Contains actions and reducers of our app, it holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
-      **`utils`** Contains app configuration and utilities.
+    > **`assets`** All your assets files like images, fonts, icons... goes here.
+    > **`components`** Contains all the app functional components.
+    > **`hooks`** Contains some custom hooks.
+    > **`pages`** Contains the app main containers (website pages)
+    > **`store`** Contains actions and reducers of our app, it holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+    > **`utils`** Contains app configuration and utilities.
 3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
 4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
