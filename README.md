@@ -66,11 +66,11 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
   This directory contains:
     > **`assets`** All your assets files like images, fonts, icons... goes here.
-    > **`components`** Contains all the app functional components.
-    > **`hooks`** Contains some custom hooks.
-    > **`pages`** Contains the app main containers (website pages)
-    > **`store`** Contains actions and reducers of our app, it holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
-    > **`utils`** Contains app configuration and utilities.
+    **`components`** Contains all the app functional components.
+    **`hooks`** Contains some custom hooks.
+    **`pages`** Contains the app main containers (website pages)
+    **`store`** Contains actions and reducers of our app, it holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+    **`utils`** Contains app configuration and utilities.
 
 3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
