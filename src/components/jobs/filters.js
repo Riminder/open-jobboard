@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Dropdown from './dropdown'
 import styles from './filters.module.scss'
-import { categories, companies, orders } from '../../mock/filters'
+import { CATEGORIES, COMPANIES, ORDERS } from '../../utils/config'
 
 const Filters = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
@@ -39,9 +39,9 @@ const Filters = () => {
   return (
     <div className={styles.filters}>
       <div className={styles.filters__dropdowns}>
-        <Dropdown options={categories} onChangeSelected={ChangeSelectedCategriesHandler} selectedItems={selectedCategories} title="Secteur" />
-        <Dropdown options={companies} onChangeSelected={ChangeSelectedCopaniesHandler} selectedItems={selectedCompanies} title="Entreprise" />
-        <Dropdown options={orders} selectedItems={selectedOrder} onChangeSelected={ChangeSelectedOrderHandler} title="Trier par" />
+        <Dropdown options={CATEGORIES} onChangeSelected={ChangeSelectedCategriesHandler} selectedItems={selectedCategories} title="Secteur" />
+        <Dropdown options={COMPANIES} onChangeSelected={ChangeSelectedCopaniesHandler} selectedItems={selectedCompanies} title="Entreprise" />
+        <Dropdown options={ORDERS} selectedItems={selectedOrder} onChangeSelected={ChangeSelectedOrderHandler} title="Trier par" />
       </div>
       <div className={styles.filters__switcher}>
         Recommandation

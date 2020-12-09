@@ -2,7 +2,7 @@ import { navigate } from 'gatsby';
 import * as actionTypes from './types';
 import { updateBoardFilters } from './jobs'
 import axios from '../../utils/axios';
-import { removeOccurrences } from '../../utils/utils'
+import { removeOccurrences, SOURCE_KEY } from '../../utils/utils'
 
 export const addProfileRequest = () => {
     return {
@@ -28,7 +28,7 @@ export const addProfile = (payload) => {
         dispatch(addProfileRequest());
         const fd = new FormData();
         fd.append('file', payload);
-        fd.append('source_key', "a0e7f695155578e403d9cbad094a802706f21bc9");
+        fd.append('source_key', SOURCE_KEY);
         fd.append('sync_parsing', 1);
         axios.post( 'profile/parsing/file', fd)
             .then( res => {

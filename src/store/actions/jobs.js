@@ -1,6 +1,8 @@
 import * as actionTypes from './types'
 import axios from '../../utils/axios'
-import { BOARD_KEY, AGENT_KEY, SOURCE_KEY, buildQueryString } from '../../utils/utils';
+import { buildQueryString } from '../../utils/utils';
+import { BOARD_KEY, AGENT_KEY, SOURCE_KEY  } from '../../utils/config';
+
 
 
 export const  updateBoardFilters = (boardFilters) => {

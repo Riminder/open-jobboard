@@ -1,5 +1,7 @@
 import  * as actionTypes from '../actions/types'
-import { updateObject, BOARD_KEY, AGENT_KEY, SOURCE_KEY } from '../../utils/utils';
+import { updateObject } from '../../utils/utils';
+import { BOARD_KEY, AGENT_KEY, SOURCE_KEY } from '../../utils/config';
+
 
 const queryObject = localStorage.getItem('queryObject') || {
     board_keys: [BOARD_KEY],
