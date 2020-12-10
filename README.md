@@ -134,8 +134,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   And run the following command:  
 
     ```shell
-      npm run build
-      npm run deploy
+    npm run build
+    npm run deploy
     ```
 
 Otherwise you can take a look on this alternatives:  
