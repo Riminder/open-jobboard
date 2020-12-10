@@ -1,35 +1,42 @@
 import  * as actionTypes from '../actions/types'
 import { updateObject } from '../../utils/utils';
 
-const queryObject = localStorage.getItem('queryObject') || {
-    board_keys: [process.env.BOARD_KEY],
-    agent_key: process.env.AGENT_KEY,
-    tags_included: [[], []],
-    name: "",
-    limit: 10,
-    page: 1,
-    sort_by: 'searching',
-    order_by: 'asc',
-    location_distance: 30,
-          location_geopoint: {},
-    use_agent: 0,
-    profile_key: '',
-    source_key: process.env.SOURCE_KEY,
-    text_keywords: [],
-    totalPage : 0,
-    status: true,
+
+let queryObject = {}
+let boardFilters = {}
+if (typeof window !== 'undefined') {
+    queryObject = localStorage.getItem('queryObject') || {
+        board_keys: [process.env.BOARD_KEY],
+        agent_key: process.env.AGENT_KEY,
+        tags_included: [[], []],
+        name: "",
+        limit: 10,
+        page: 1,
+        sort_by: 'searching',
+        order_by: 'asc',
+        location_distance: 30,
+              location_geopoint: {},
+        use_agent: 0,
+        profile_key: '',
+        source_key: process.env.SOURCE_KEY,
+        text_keywords: [],
+        totalPage : 0,
+        status: true,
+    }
+
+    boardFilters = JSON.parse(localStorage.getItem('boardFilters')) || {
+        skills: {enabled: [], disabled: []},
+        languages: {enabled: [], disabled: []},
+        jobs: [],
+        locations: [],
+        categories: [],
+        companies: [],
+        orderBy: '',
+        sortBy: '',
+    }
 }
 
-const boardFilters = JSON.parse(localStorage.getItem('boardFilters')) || {
-    skills: {enabled: [], disabled: []},
-    languages: {enabled: [], disabled: []},
-    jobs: [],
-    locations: [],
-    categories: [],
-    companies: [],
-    orderBy: '',
-    sortBy: '',
-}
+
 
 const initialState = {
     jobs: {},

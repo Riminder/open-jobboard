@@ -8,12 +8,17 @@
     border-bottom: 1px solid $lighterGreen;
     margin: auto;
     padding-top: 0.7rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
     z-index: 99;
     width: 100%;
+}
+
+.logo {
+    width: 8rem;
+    height: auto;
 }
 
 .jambotron {
