@@ -129,14 +129,154 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   The project uses sass preprocessor for css, and the variables and mixing are defined in **src/styles/helpers.scss**.
   And you can change the images and logos directly in the **src/assets** directory.
 
+### Website metadata, information, SEO and description:
+  This project uses the react helmet pluging that provides drop-in support for server side rendering, and let you control your document head using a simple react component
+
+  with this plugings you can add attributes like website title, meta attributes, description, etc... and will get added to the static html build.
+  
+  This attributes can be added to the file **gatsby-config.js**
+
+  ```
+  module.exports = {
+    siteMetadata: {
+      title: 'Your job board title',
+      description: `
+        Your job board description
+      `,
+      siteUrl: 'https://example.com',
+      image: 'your og image url',
+      author:  'HrFlow.ai',
+      organization: {
+        name: 'Hrflow.ai',
+        url: 'https://hrflow.ai',
+        logo: 'https://img.riminder.net/logo/Logo.svg',
+      },
+    },
+    plugins: [
+      'gatsby-plugin-sass',
+      '@bumped-inc/gatsby-plugin-optional-chaining',
+      `gatsby-plugin-react-helmet`,
+      'gatsby-plugin-root-import',
+      {
+        resolve: `gatsby-plugin-s3`,
+        options: {
+          bucketName: "your s3 bucket name",
+        },
+      },
+    ],
+  }
+  ```
+
+  And you can personlize the attributes to be add to the head of each page by editing the component **src/components/seo**
+
+  ```
+  import React from "react"
+  import PropTypes from "prop-types"
+  import { Helmet } from "react-helmet"
+  import { useStaticQuery, graphql } from "gatsby"
+
+  function SEO({ description, lang, meta, title }) {
+    const { site } = useStaticQuery(
+      graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+              description
+              author
+              organization {
+                name
+                url
+                logo
+              }
+            }
+          }
+        }
+      `
+    )
+
+    const metaDescription = description || site.siteMetadata.description
+
+    return (
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+        title={title}
+        titleTemplate={`%s | ${site.siteMetadata.title}`}
+        meta={[
+          {
+            name: `description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:title`,
+            content: title,
+          },
+          {
+            property: `og:description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:creator`,
+            content: site.siteMetadata.author,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: metaDescription,
+          },
+          {
+            name: `organization`,
+            content: site.siteMetadata.organization.name,
+          },
+          {
+            name: `organization url`,
+            content: site.siteMetadata.organization.url,
+          },
+          {
+            name: `organization logo`,
+            content: site.siteMetadata.organization.logo,
+          },
+        ].concat(meta)}
+      />
+    )
+  }
+
+  SEO.defaultProps = {
+    lang: `en`,
+    meta: [],
+    description: ``,
+  }
+
+  SEO.propTypes = {
+    description: PropTypes.string,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string.isRequired,
+  }
+  export default SEO
+  ```
+
 ## 💫 Deploy
   The project is pre-configured to be deployed to aws s3, you just need to add and configure your aws cridentials using aws-cli locally.
   And run the following command:  
 
-    ```shell
-      npm run build
-      npm run deploy
-    ```
+  ```shell
+  npm run build
+  npm run deploy
+  ```
 
 Otherwise you can take a look on this alternatives:  
 
