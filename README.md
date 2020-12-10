@@ -136,7 +136,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
   This attributes can be added to the file **gatsby-config.js**
 
-  ```
+  ```javascript
   module.exports = {
     siteMetadata: {
       title: 'Your job board title',
@@ -169,7 +169,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
   And you can personlize the attributes to be add to the head of each page by editing the component **src/components/seo**
 
-  ```
+  ```javascript
   import React from "react"
   import PropTypes from "prop-types"
   import { Helmet } from "react-helmet"
