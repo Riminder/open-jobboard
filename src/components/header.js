@@ -9,7 +9,7 @@ const Header = props => {
       <header className={headerStyles.header}>
         <nav className={headerStyles.navbar}>
           <Link to={"/"}>
-            <img src={logo} alt="Logo" />
+            <img className={headerStyles.logo} src={logo} alt="Logo" />
           </Link>
         </nav>
         {props.jambotron && (
