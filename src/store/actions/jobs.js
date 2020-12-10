@@ -1,9 +1,6 @@
 import * as actionTypes from './types'
 import axios from '../../utils/axios'
-import { buildQueryString } from '../../utils/utils';
-import { BOARD_KEY, AGENT_KEY, SOURCE_KEY  } from '../../utils/config';
-
-
+import { buildQueryString } from '../../utils/utils'
 
 export const  updateBoardFilters = (boardFilters) => {
     return {
@@ -35,8 +32,8 @@ export const fetchJobs = (payload) => {
     return dispatch => {
         dispatch(fetchJobsRequest());
         const queryObject = {
-            board_keys: [BOARD_KEY],
-            agent_key: AGENT_KEY,
+            board_keys: [process.env.BOARD_KEY],
+            agent_key: process.env.AGENT_KEY,
             tags_included: [[], []],
             name: payload.jobs.filter(job => job.checked === true)[0]?.text || '',
             limit: 10,
@@ -47,7 +44,7 @@ export const fetchJobs = (payload) => {
             location_geopoint: "",
             use_agent: 0,
             profile_key: '',
-            source_key: SOURCE_KEY,
+            source_key: process.env.SOURCE_KEY,
             text_keywords: payload.skills.enabled.map(skill => skill).concat(payload.languages.enabled.map(language => language)),
             totalPage : 0,
             status: true,

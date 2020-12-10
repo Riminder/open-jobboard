@@ -1,11 +1,9 @@
 import  * as actionTypes from '../actions/types'
 import { updateObject } from '../../utils/utils';
-import { BOARD_KEY, AGENT_KEY, SOURCE_KEY } from '../../utils/config';
-
 
 const queryObject = localStorage.getItem('queryObject') || {
-    board_keys: [BOARD_KEY],
-    agent_key: AGENT_KEY,
+    board_keys: [process.env.BOARD_KEY],
+    agent_key: process.env.AGENT_KEY,
     tags_included: [[], []],
     name: "",
     limit: 10,
@@ -16,7 +14,7 @@ const queryObject = localStorage.getItem('queryObject') || {
           location_geopoint: {},
     use_agent: 0,
     profile_key: '',
-    source_key: SOURCE_KEY,
+    source_key: process.env.SOURCE_KEY,
     text_keywords: [],
     totalPage : 0,
     status: true,

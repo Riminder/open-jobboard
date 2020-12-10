@@ -1,10 +1,9 @@
 import axios from 'axios';
-import { API_KEY } from './config'
 
 const instance = axios.create({
-    baseURL: 'https://api.rimstaging.net/v1',
+    baseURL: process.env.API_URL,
     headers: { 
-        'X-API-KEY': API_KEY,
+        'X-API-KEY': process.env.API_KEY,
     }
 });
 
