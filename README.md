@@ -94,7 +94,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about this project.
 
-## 🎓 Configure and customize the job board
+## :wrench: Configure and customize the job board
 
 ### Environment variables:
 
@@ -124,18 +124,30 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     GOOGLE_API_KEY=Your google api key (used for places searching)
   ```
 
-### Environment variables:
+### Colors and images:
+
+  The project uses sass preprocessor for css, and the variables and mixing are defined in **src/styles/helpers.scss**.
+  And you can change the images and logos directly in the **src/assets** directory.
+
 ## 💫 Deploy
   The project is pre-configured to be deployed to aws s3, you just need to add and configure your aws cridentials using aws-cli locally.
   And run the following command:  
 
     ```shell
-    npm run build
-    npm run deploy
+      npm run build
+      npm run deploy
     ```
+
 Otherwise you can take a look on this alternatives:  
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)  
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world) 
+
+
+## :octocat: Contributions
+
+  Please feel free to contribute to the quality of this content by submitting PRs for improvements to code, architecture, etc. While typo fixes are welcomed, they will likely be caught through normal editing/publishing processes, so please don't worry about them right now.
+
+  Any contributions you make to this effort are of course greatly appreciated.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
