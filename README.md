@@ -94,14 +94,37 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about this project.
 
-<!-- ## 🎓 Learning Gatsby
+## 🎓 Configure and customize the job board
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+### Environment variables:
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+  The project environment variables must be  defined in the **.env.developement** and **.env.production** files in the root directory of the project.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar. -->
+  > Please note that you shouldn’t commit .env.* files to your source control and rather use options given by your Continuous Deployment (CD) provider.
+  An example is Netlify with its [build environment variables](https://www.netlify.com/docs/continuous-deployment/#build-environment-variables).
 
+  Here is an exemple of the .env files:
+
+  - .env.development
+  ```
+    API_URL=https://api.hrflow.ai/v1
+    API_KEY=Your team api key
+    BOARD_KEY=Your team board key for development
+    SOURCE_KEY=Your team source key for development
+    AGENT_KEY=Your team agent key for development
+    GOOGLE_API_KEY=Your google api key (used for places searching)
+  ```
+  - .env.production
+  ```
+    API_URL=https://api.hrflow.ai/v1
+    API_KEY=Your team api key
+    BOARD_KEY=Your team board key for production
+    SOURCE_KEY=Your team source key for production
+    AGENT_KEY=Your team agent key for production
+    GOOGLE_API_KEY=Your google api key (used for places searching)
+  ```
+
+### Environment variables:
 ## 💫 Deploy
   The project is pre-configured to be deployed to aws s3, you just need to add and configure your aws cridentials using aws-cli locally.
   And run the following command:  
