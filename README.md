@@ -9,14 +9,16 @@
   Open source job board
 </h1>
 
+<center>
 ![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)	
+</center>
 
 <br/>
 open-jobboard is an open source jobboard created by HrFlow.ai to allow developers to build easily AI powered job listing platforms and job matching applications.
 <br/>
 
 ## About HrFlow.ai
-HrFlow.ai is an API first company that provides the most sophisticated AI Powered JOB & PROFILE API. Corporates and Software vendors can leverage our technology layers to Parse, Enrich and Score both job and candidate data. The platform supports +200 apps, pipelines and code integrations so you can automate workflows with your favorite tools.
+https://www.HrFlow.ai is an API first company that provides the most sophisticated AI Powered JOB & PROFILE API. Corporates and Software vendors can leverage our technology layers to Parse, Enrich and Score both job and candidate data. The platform supports +200 apps, pipelines and code integrations so you can automate workflows with your favorite tools.
 
 ## 🙈 Demo of open-jobboard
 video demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
