@@ -20,10 +20,10 @@ HrFlow.ai is an API first company that provides the most sophisticated AI Powere
 
 
 ## 🙈 Demo of open-jobboard
-
+video demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
+<br/>
 ![alt text](https://s3.amazonaws.com/img.riminder.net/Screen+Shot+2020-12-12+at+23.11.00.png)
 
-video demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
 
 ## 🚀 Quick start
 
