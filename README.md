@@ -8,8 +8,17 @@
 <h1 align="center">
   Open source job board
 </h1>
+open-jobboard is an open source jobboard created by HrFlow.ai to allow developers to build easily AI powered job listing platforms and job matching applications.
 
 ![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)
+
+## About HrFlow.ai
+HrFlow.ai is an API first company that provides the most sophisticated AI Powered JOB & PROFILE API. Corporates and Software vendors can leverage our technology layers to Parse, Enrich and Score both job and candidate data. The platform supports +200 apps, pipelines and code integrations so you can automate workflows with your favorite tools.
+
+
+## 🙈 Demo of open-jobboard
+
+<script src="https://fast.wistia.com/embed/medias/gvf4u3fe48.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_gvf4u3fe48 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/gvf4u3fe48/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
 
 ## 🚀 Quick start
 
@@ -19,7 +28,7 @@
     git clone  https://github.com/Riminder/open-jobboard.git
     ```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -29,7 +38,7 @@
     npm start
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
