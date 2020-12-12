@@ -9,9 +9,7 @@
   Open source job board
 </h1>
 
-<center>
 ![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)	
-</center>
 
 <br/>
 open-jobboard is an open source jobboard created by HrFlow.ai to allow developers to build easily AI powered job listing platforms and job matching applications.
