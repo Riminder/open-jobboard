@@ -19,7 +19,7 @@ open-jobboard is an open source jobboard created by HrFlow.ai to allow developer
 https://www.HrFlow.ai is an API first company that provides the most sophisticated AI Powered JOB & PROFILE API. Corporates and Software vendors can leverage our technology layers to Parse, Enrich and Score both job and candidate data. The platform supports +200 apps, pipelines and code integrations so you can automate workflows with your favorite tools.
 
 ## 🙈 Demo of open-jobboard
-video demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
+Vidéo demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
 <br/>
 <br/>
 ![alt text](https://s3.amazonaws.com/img.riminder.net/Screen+Shot+2020-12-12+at+23.11.00.png)
