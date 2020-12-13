@@ -70,7 +70,7 @@ export const addProfile = (payload) => {
                     locations,
                 };
 
-                localStorage.setItem('boardFilters', JSON.stringify(boardFilters));
+                // localStorage.setItem('boardFilters', JSON.stringify(boardFilters));
                 dispatch(updateBoardFilters(boardFilters));
                 navigate('/jobs');
             })
