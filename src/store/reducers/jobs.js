@@ -2,28 +2,8 @@ import  * as actionTypes from '../actions/types'
 import { updateObject } from '../../utils/utils';
 
 
-let queryObject = {}
 let boardFilters = {}
 if (typeof window !== 'undefined') {
-    queryObject = localStorage.getItem('queryObject') || {
-        board_keys: [process.env.BOARD_KEY],
-        agent_key: process.env.AGENT_KEY,
-        tags_included: [[], []],
-        name: "",
-        limit: 10,
-        page: 1,
-        sort_by: 'searching',
-        order_by: 'asc',
-        location_distance: 30,
-              location_geopoint: {},
-        use_agent: 0,
-        profile_key: '',
-        source_key: process.env.SOURCE_KEY,
-        text_keywords: [],
-        totalPage : 0,
-        status: true,
-    }
-
     boardFilters = JSON.parse(localStorage.getItem('boardFilters')) || {
         skills: {enabled: [], disabled: []},
         languages: {enabled: [], disabled: []},
@@ -40,13 +20,12 @@ if (typeof window !== 'undefined') {
 
 const initialState = {
     jobs: {},
-    queryObject,
-    boardFilters: boardFilters
+    boardFilters
 }
 
 
 const updateBoardFilters = (state, action) => {
-    localStorage.setItem('boardFilters', JSON.stringify(boardFilters))
+    localStorage.setItem('boardFilters', JSON.stringify(action.boardFilters))
     return updateObject(state, { 
         boardFilters: action.boardFilters,
     })
