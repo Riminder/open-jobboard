@@ -9,7 +9,24 @@
   Open source job board
 </h1>
 
-![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)
+![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)	
+
+<br/>
+open-jobboard is an open source jobboard created by HrFlow.ai to allow developers to build easily AI powered job listing platforms and job matching applications.
+<br/>
+
+## About HrFlow.ai
+https://www.HrFlow.ai is an API first company that provides the most sophisticated AI Powered JOB & PROFILE API. Corporates and Software vendors can leverage our technology layers to Parse, Enrich and Score both job and candidate data. The platform supports +200 apps, pipelines and code integrations so you can automate workflows with your favorite tools.
+- Our Developers documentation : https://developers.hrflow.ai/
+- Our API list (Parsing, Revealing, Embedding, Searching, Scoring, Reasoning) : https://www.hrflow.ai/api
+- Our cool demos labs : https://labs.hrflow.ai
+
+## 🙈 Demo of open-jobboard
+Vidéo demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
+<br/>
+<br/>
+![alt text](https://s3.amazonaws.com/img.riminder.net/Screen+Shot+2020-12-12+at+23.11.00.png)
+
 
 ## 🚀 Quick start
 
@@ -19,7 +36,7 @@
     git clone  https://github.com/Riminder/open-jobboard.git
     ```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -29,7 +46,7 @@
     npm start
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
@@ -136,7 +153,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
   This attributes can be added to the file **gatsby-config.js**
 
-  ```
+  ```javascript
   module.exports = {
     siteMetadata: {
       title: 'Your job board title',
@@ -169,7 +186,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
   And you can personlize the attributes to be add to the head of each page by editing the component **src/components/seo**
 
-  ```
+  ```javascript
   import React from "react"
   import PropTypes from "prop-types"
   import { Helmet } from "react-helmet"
