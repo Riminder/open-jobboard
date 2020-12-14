@@ -8,8 +8,10 @@
 <h1 align="center">
   Open source job board
 </h1>
+<span align="center">
+  ![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)
+</span>
 
-![](https://img.shields.io/github/v/release/Riminder/open-jobboard) ![](https://img.shields.io/github/license/Riminder/open-jobboard)	
 
 <br/>
 open-jobboard is an open source jobboard created by HrFlow.ai to allow developers to build easily AI powered job listing platforms and job matching applications.
@@ -46,74 +48,7 @@ Vidéo demo: https://hrfflow.wistia.com/medias/gvf4u3fe48
     npm start
     ```
 
-3.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    <!-- _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time! -->
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    │   ├── assets 
-    │   ├── components
-    │   ├── hooks
-    │   ├── pages
-    │   ├── store
-    │   ├── styles
-    │   └── utiles  
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-    This directory contains:  
-      >**`assets`** All your assets files like images, fonts, icons... goes here.  
-      >**`components`** Contains all the app functional components.  
-      >**`hooks`** Contains some custom hooks.  
-      >**`pages`** Contains the app main containers (website pages).  
-      >**`store`** Contains actions and reducers of our app, it holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.  
-      >**`utils`** Contains app configuration and utilities.  
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about this project.
-
-## :wrench: Configure and customize the job board
-
-### Environment variables:
+3.  **Add environment variables**
 
   The project environment variables must be  defined in the **.env.developement** and **.env.production** files in the root directory of the project.
 
@@ -141,12 +76,19 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     GOOGLE_API_KEY=Your google api key (used for places searching)
   ```
 
-### Colors and images:
+  4.  **Open the source code and start editing!**
+
+    Your site is now running at `http://localhost:8000`!
+
+
+## :wrench: Configure and customize the job board
+
+1. **Colors and images:**
 
   The project uses sass preprocessor for css, and the variables and mixing are defined in **src/styles/helpers.scss**.
   And you can change the images and logos directly in the **src/assets** directory.
 
-### Website metadata, information, SEO and description:
+2. **Website metadata, information, SEO and description:**
   This project uses the react helmet pluging that provides drop-in support for server side rendering, and let you control your document head using a simple react component
 
   with this plugings you can add attributes like website title, meta attributes, description, etc... and will get added to the static html build.
@@ -184,7 +126,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   }
   ```
 
-  And you can personlize the attributes to be add to the head of each page by editing the component **src/components/seo**
+  And you can personalize the attributes to be added to the head of each page by editing the component **src/components/seo**
 
   ```javascript
   import React from "react"
@@ -285,6 +227,65 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   }
   export default SEO
   ```
+
+
+## 🧐 What's inside?
+
+A quick look at the top-level files and directories you'll see in a Gatsby project.
+
+    .
+    ├── node_modules
+    ├── src
+    │   ├── assets 
+    │   ├── components
+    │   ├── hooks
+    │   ├── pages
+    │   ├── store
+    │   ├── styles
+    │   └── utiles  
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
+
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+
+    This directory contains:  
+      >**`assets`** All your assets files like images, fonts, icons... goes here.  
+      >**`components`** Contains all the app functional components.  
+      >**`hooks`** Contains some custom hooks.  
+      >**`pages`** Contains the app main containers (website pages).  
+      >**`store`** Contains actions and reducers of our app, it holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.  
+      >**`utils`** Contains app configuration and utilities.  
+
+3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+
+4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+
+9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+
+10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+
+12. **`README.md`**: A text file containing useful reference information about this project.
+
 
 ## 💫 Deploy
   The project is pre-configured to be deployed to aws s3, you just need to add and configure your aws cridentials using aws-cli locally.
