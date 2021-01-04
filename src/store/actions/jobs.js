@@ -42,7 +42,7 @@ export const fetchJobs = (payload) => {
             order_by: 'asc',
             location_distance: 30,
             location_geopoint: "",
-            use_agent: 0,
+            use_agent: payload.useAgent ? 1 : 0,
             profile_key: '',
             source_key: process.env.SOURCE_KEY,
             text_keywords: payload.skills.enabled.map(skill => skill).concat(payload.languages.enabled.map(language => language)),

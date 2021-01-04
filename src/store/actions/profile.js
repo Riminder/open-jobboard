@@ -68,6 +68,11 @@ export const addProfile = (payload) => {
                     languages: {enabled: parsing.languages.map(item => item.name), disabled: [] },
                     jobs: experiences,
                     locations,
+                    categories: [],
+                    companies: [],
+                    orderBy: 'desc',
+                    sortBy: 'searching',
+                    useAgent: 0
                 };
 
                 // localStorage.setItem('boardFilters', JSON.stringify(boardFilters));

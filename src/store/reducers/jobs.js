@@ -13,6 +13,7 @@ if (typeof window !== 'undefined') {
         companies: [],
         orderBy: '',
         sortBy: '',
+        useAgent: true
     }
 }
 
