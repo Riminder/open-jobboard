@@ -60,7 +60,7 @@
   ```
     API_URL=https://api.hrflow.ai/v1
     API_KEY=Your team api key
-    BOARD_KEY=Your team board key for development
+    BOARD_KEYS=Your team list of board keys for development
     SOURCE_KEY=Your team source key for development
     AGENT_KEY=Your team agent key for development
     GOOGLE_API_KEY=Your google api key (used for places searching)
@@ -69,7 +69,7 @@
   ```
     API_URL=https://api.hrflow.ai/v1
     API_KEY=Your team api key
-    BOARD_KEY=Your team board key for production
+    BOARD_KEYS=Your team list of board keys for production
     SOURCE_KEY=Your team source key for production
     AGENT_KEY=Your team agent key for production
     GOOGLE_API_KEY=Your google api key (used for places searching)

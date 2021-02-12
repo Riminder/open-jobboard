@@ -1,6 +1,6 @@
 API_URL=https://api.hrflow.ai/v1
 API_KEY= your team api key 
-BOARD_KEY= your board key
+BOARD_KEYS= your board key
 SOURCE_KEY= your source key
 AGENT_KEY= your agent key
 GOOGLE_API_KEY= your google api key

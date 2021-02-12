@@ -32,7 +32,7 @@ export const fetchJobs = (payload) => {
     return dispatch => {
         dispatch(fetchJobsRequest());
         const queryObject = {
-            board_keys: [process.env.BOARD_KEY],
+            board_keys: process.env.BOARD_KEYS,
             agent_key: process.env.AGENT_KEY,
             tags_included: [[], []],
             name: payload.jobs.filter(job => job.checked === true)[0]?.text || '',
