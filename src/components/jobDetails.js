@@ -8,7 +8,7 @@ import swal from 'sweetalert'
 import Taggy from './common/taggy'
 import Share from './common/share'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileAlt, faBriefcase, faArrowLeft, faStar, faCalendar, faCar, faGraduationCap, faHourglassHalf, faBullseye } from '@fortawesome/free-solid-svg-icons'
+import { faFileAlt, faBriefcase, faCalendar, faIndustry, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import ErrorMessage from '../components/common/errorMessage'
 import Score from './jobs/score'
 import Revealing from './revealing'
@@ -53,13 +53,11 @@ const JobDetails = (props) => {
     },[props.profile])
     
     const jobData = job?.payload || null
-    let taggyDesciption = ""
-    let taggyProfile = ""
+    let taggy = ""
     if(props.documentParsing.s) {
         const text = props.documentParsing.payload.text
-        let textDescription = text.split('/n/n')[0]
-        let textProfile = text.split('/n/n')[1]
-        const spans = props.documentParsing.payload.ents.map(ent => {
+        const documentParsing = props.documentParsing.payload.ents.filter(item => item.label !== 'JobTitle')
+        const spans = documentParsing.map(ent => {
             switch (ent.label) {
                 case "FirstName": 
                     return { type: "prénom", start: ent.start, end: ent.end }
@@ -73,8 +71,8 @@ const JobDetails = (props) => {
                     return { type: "localisation", start: ent.start, end: ent.end }
                 case "Company": 
                     return { type: "entreprise", start: ent.start, end: ent.end }
-                case "JobTitle": 
-                    return { type: "poste", start: ent.start, end: ent.end }
+                // case "JobTitle": 
+                //     return { type: "poste", start: ent.start, end: ent.end }
                 case "Task": 
                     return { type: "tâche", start: ent.start, end: ent.end }
                 case "School": 
@@ -101,13 +99,8 @@ const JobDetails = (props) => {
                     return { type: "site-web", start: ent.start, end: ent.end }
                 default: 
                     return { type: ent.label.toLowerCase(), start: ent.start, end: ent.end }
-
             }   
         })
-
-        let spansDescription = spans.filter(span => span.end <= textDescription.length);
-        let spansProfile = spans.filter(span => span.start > textDescription.length);
-        spansProfile = spansProfile.map(span => ({type: span.type, start: span.start - textDescription.length -4, end: span.end - textDescription.length - 4 }))
     
         const ents = [
             { type: 'prénom', color: {h: 303, s: 98.1, l: 42.2, a: 1}},
@@ -116,7 +109,7 @@ const JobDetails = (props) => {
             { type: 'durée', color: {h: 321, s: 70.9, l: 67.6, a: 1}},
             { type: 'localisation', color: {h: 94, s: 48.6, l: 50.4, a: 1}},
             { type: 'entreprise', color: {h: 71, s: 59.5, l: 51.6, a: 1}},
-            { type: 'poste', color: {h: 52, s: 62.5, l: 43.9, a: 1}},
+            // { type: 'poste', color: {h: 52, s: 62.5, l: 43.9, a: 1}},
             { type: 'tâche', color: {h: 80, s: 75.5, l: 53.1, a: 1}},
             { type: 'école', color: {h: 282, s: 98.6, l: 71, a: 1}},
             { type: 'formation', color: {h: 291, s: 98.9, l: 36.1, a: 1}},
@@ -131,8 +124,8 @@ const JobDetails = (props) => {
             { type: 'site-web', color: {h: 204, s: 93.9, l: 44.9, a: 1}}
         ]
 
-        taggyDesciption = (<Taggy text={textDescription} spans={spansDescription} ents={ents} />)
-        taggyProfile = (<Taggy text={textProfile} spans={spansProfile} ents={ents} />)
+        taggy = (<Taggy text={text} spans={spans} ents={ents} />)
+
     }
 
     if(jobData) {
@@ -140,17 +133,12 @@ const JobDetails = (props) => {
         const descriptionContent = jobData?.sections?.filter(section => section.title === 'description')?.[0]?.description || ''
         const profileContent = jobData?.sections?.filter(section => section.title === 'profile')?.[0]?.description || ''
         const location = jobData?.location?.text || ''
-        const company = jobData?.tags?.filter(tag => tag.name === 'organization_name')?.[0]?.value || ''
-        const category = jobData?.tags?.filter(tag => tag.name === 'line_of_business')?.[0]?.value || ''
-        const contract = jobData?.tags?.filter(tag => tag.name === 'contract')?.[0]?.value || ''
-        const experience = jobData?.tags?.filter(tag => tag.name === 'required_experience')?.[0]?.value || ''
-        const education = jobData?.tags?.filter(tag => tag.name === 'education_requirement')?.[0]?.value || ''
-        const duration = jobData?.tags?.filter(tag => tag.name === 'duration')?.[0]?.value || ''
-        const startDate = jobData?.ranges_date?.[0].value_min || ''
+        const company = jobData?.tags?.filter(tag => tag.name === 'company')?.[0]?.value || ''
+        const category = jobData?.tags?.filter(tag => tag.name === 'category')?.[0]?.value || ''
+        const contract = jobData?.tags?.filter(tag => tag.name === 'type')?.[0]?.value || ''
         // const activity = jobData?.tags?.filter(tag => tag.name === 'field_of_activity')?.[0]?.value || ''
 
         const creationDate =  moment(jobData?.created_at).format('DD MMM YYYY')
-        const drivingLicence = jobData?.tags?.filter(tag => tag.name === 'driving_licence')?.[0]?.value || ''
         const profileJobTag = { name: 'application_board_job_key', value: `${process.env.SOURCE_KEY}-${jobData.key}` }
         return (
             <>
@@ -167,42 +155,34 @@ const JobDetails = (props) => {
                                     />
                                 </div>
                             )}
+                            {company && (
+                                <div className="job-tag">
+                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faBriefcase} /></div>{company}
+                                </div>
+                            )}
                             <h3 style={{marginBottom: '1rem'}}>Le poste</h3>
                             {contract && (
                                 <div className="job-tag">
                                     <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faFileAlt} /></div>{contract}
                                 </div>
                             )}
-                            {experience && (
+                            {category && (
                                 <div className="job-tag">
-                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faStar} /></div> Expérience :&nbsp;&nbsp;{experience}
+                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faIndustry} /></div>{category}
                                 </div>
                             )}
-                            {education && (
+                           
+                            {creationDate && (
                                 <div className="job-tag">
-                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faGraduationCap} /></div> Formation :&nbsp;&nbsp;{education}
+                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faCalendar} /></div>{creationDate}
                                 </div>
                             )}
-                            {startDate && (
+
+                            {location && (
                                 <div className="job-tag">
-                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faBullseye} /></div> Début :&nbsp;&nbsp;{moment(startDate).locale('fr').format('DD MMMM YYYY')}
+                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faMapMarkerAlt} /></div>{location}
                                 </div>
                             )}
-                            {duration && (
-                                <div className="job-tag">
-                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faHourglassHalf} /></div> Durée :&nbsp;&nbsp;{duration}
-                                </div>
-                            )}
-                            {drivingLicence && (
-                                <div className="job-tag">
-                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faCar} /></div> Véhiculé :&nbsp;&nbsp;{drivingLicence ? 'Oui' :  'Non'}
-                                </div>
-                            )}
-                            {/* {creationDate && (
-                                <div className="job-tag">
-                                    <div className="icon-fixed-width"><FontAwesomeIcon className="icon-left" icon={faCalendar} /></div> Publié le :&nbsp;&nbsp;{creationDate}
-                                </div>
-                            )} */}
                         </div>
                         <div className="details__drop">
                             {props.file?.fileName ? (
@@ -245,11 +225,7 @@ const JobDetails = (props) => {
                         <div className="jobs details">
                             <h3>Description du poste</h3>
                             <div className="details__description">
-                                {taggyDesciption}
-                            </div>
-                            <h3 style={{marginTop: '2rem'}}>Profil recherché</h3>
-                            <div className="details__description">
-                                {taggyProfile}
+                                {taggy}
                             </div>
                             <Share
                             socialConfig={{

@@ -1,44 +1,16 @@
-export const CATEGORIES = ['Électricité',
-    'Agriculture',
-    'Industrie',
-    'BTP',
+export const CATEGORIES = [
+    'AI / Research & Development',
+    'Artificial intelligence',
     'Services',
-    'Transport-logistique',
-    'Transport / Logistique',
-    'Santé',
-    'Hôtellerie / Restauration',
-    'Mécanique',
-    'Industrie agroalimentaire',
-    'Machines, véhicules',
-    'Actions sociales, soins à domicile',
-    'Chimie/Parachimie',
-    'Ingénierie',
-    'Médical',
-    'Bâtiment - BTP',
-    'CVC',
-    'Commercial',
-    'Tertiaire',
-    'Hôtellerie-restauration',
-    'Technologies / SI',
-    'Nucléaire',
-    'Chimie Pharmaceutique',
-    'Autres services personnels',
-    'Informatique/ Électronique',
-    'Distribution / commerce de gros',
-    'Bâtiment',
-    'Aéronautique'
+    'Software engineering',
+    'Financial Services'
 ]
 
 export const TYPES = [
-    'Fixe',
-    'Temporaire (Indéterminé)',
-    'CDD',
-    'Job étudiant',
-    'Stage/Alternance',
-    'Temporaire',
-    'Apprenti',
-    'CDI',
-    'Interim',
+    'Full time',
+    'Part time',
+    'internship',
+    'Freelance',
 ]
 
 

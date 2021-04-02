@@ -77,8 +77,8 @@ const Filters = props => {
   return (
     <div className={styles.filters}>
       <div className={styles.filters__dropdowns}>
-        <Dropdown options={CATEGORIES} onChangeSelected={ChangeSelectedCategriesHandler} selectedItems={selectedCategories} title="Domaines d'activités" />
-        <Dropdown options={TYPES} onChangeSelected={ChangeSelectedTypesHandler} selectedItems={selectedTypes} title="Contrat" />
+        <Dropdown options={CATEGORIES} onChangeSelected={ChangeSelectedCategriesHandler} selectedItems={selectedCategories} title="Categories" />
+        <Dropdown options={TYPES} onChangeSelected={ChangeSelectedTypesHandler} selectedItems={selectedTypes} title="Contracts" />
         {/* <Dropdown options={DATESOPTIONS} selectedItems={selectedRangeDate} onChangeSelected={ChangeSelecedDateRangeHandler} title="Publié il y a" /> */}
         <Dropdown options={ORDERS} selectedItems={selectedOrder} onChangeSelected={ChangeSelectedOrderHandler} title={selectedOrder && selectedOrder.label || 'Trier par'} />
       </div>

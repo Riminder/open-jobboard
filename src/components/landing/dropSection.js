@@ -14,6 +14,7 @@ import clippedStyles from './dropSection.module.scss'
 import girlImg from '../../assets/images/girl.png'
 import boyImg from '../../assets/images/boy.png'
 import times from '../../assets/images/times.svg'
+import bridgeImg from '../../assets/images/bridge.png'
 
 
 const DropSection = (props) => {
@@ -77,7 +78,7 @@ const DropSection = (props) => {
   return (
     <>
       <section className={clippedStyles.clipped}>
-        {/* <Media
+        <Media
           queries={{ large: "(min-width: 1200px)" }}
           defaultMatches={{ large: device === 'desktop' && props.isDesktopOrLaptop === 'desktop' }}
           render={() => 
@@ -85,7 +86,7 @@ const DropSection = (props) => {
               <img src={bridgeImg} />
             </div>
           }
-        /> */}
+        />
         <Media
           queries={{ mobile: "(max-width: 1200px)" }}
           defaultMatches={{ mobile: device === 'mobile' && props.isDesktopOrLaptop === 'mobile' }}
@@ -93,9 +94,9 @@ const DropSection = (props) => {
             <div className={clippedStyles.heading_mobile}>
               <div className="text-extra-large"><span className="text-bold-600">BPI group</span> vous accompagne</div>
               <div className="text-extra-large text-bold-600">vers un nouvel avenir professionnel</div>
-              {/* <div className={clippedStyles.bridge_mobile}>
+              <div className={clippedStyles.bridge_mobile}>
                 <img src={bridgeImg} className={clippedStyles.bridge_mobile_img} />
-              </div> */}
+              </div>
             </div>
           }
         />

@@ -4,6 +4,7 @@
     display: flex;
     height: 48rem;
     background: linear-gradient(142.28deg, $primary 0.89%, $java 94.05%);
+    position: relative;
 }
 
 .left {
@@ -97,6 +98,13 @@
     height: 100%;
 }
 
+.dropzone  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .left__content_hovered {
     height: 100%;
     display: none;
@@ -165,16 +173,16 @@
 }
 
 .bridge {
-    width: 26rem;
+    width: 12rem;
     height: 100%;
     position: absolute;
     top: 0;
-    left: calc(50% - 12rem);
+    left: calc(50% - 6rem);
     display: flex;
     align-items: center;
     z-index: 100;
     img {
-        width: 26rem;
+        width: 12rem;
         height: auto;
     }
 }
@@ -193,6 +201,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        background: white;
     }
     .heading_mobile {
         background: white;

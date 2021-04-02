@@ -142,10 +142,9 @@ export const fetchJobs = (payload) => {
 export  const postDocumentParsing = (payload) => {
     return dispatch => {
         dispatch(postDocumentParsingRequest());
-        const description = payload.sections.filter(section => section.name ==='description')[0].description || ''
-        const profile = payload.sections.filter(section => section.name ==='profile')[0].description || ''
+        const description = payload.summary || ''
 
-        const data = { text: description +'/n/n'+ profile}
+        const data = { text: description}
         const url = `document/parsing`
         axios.post(url, data)
             .then( res => {
@@ -160,7 +159,7 @@ export  const postDocumentParsing = (payload) => {
 export  const postDocumentRevealing = (payload) => {
     return dispatch => {
         dispatch(postDocumentRevealingRequest());
-        const description = payload.sections.filter(section => section.name ==='description')[0].description || ''
+        const description = payload.summary || ''
         const data = { text: description }
         const url = `document/revealing`
         axios.post(url, data)

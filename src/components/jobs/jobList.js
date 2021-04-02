@@ -15,9 +15,9 @@ const JobList = (props) => {
           const name = job.name
           const location = job.location.text
           const company = job.tags.filter(tag => tag.name === 'company')?.[0]?.value
-          const category = job.tags.filter(tag => tag.name === 'line_of_business')?.[0]?.value
-          const type = job.tags.filter(tag => tag.name === 'contract')?.[0]?.value
-          const description = job.sections.filter(section => section.title === 'profile')?.[0].description
+          const category = job.tags.filter(tag => tag.name === 'category')?.[0]?.value
+          const type = job.tags.filter(tag => tag.name === 'type')?.[0]?.value
+          const description = job.summary
           const profileJobTag = { name: 'application_board_job_key', value: `${process.env.SOURCE_KEY}-${job.key}` }
           const isInterested  = props.profile?.payload?.tags?.filter(tag => JSON.stringify(tag) === JSON.stringify(profileJobTag)).length > 0
           const score = job.score || null
