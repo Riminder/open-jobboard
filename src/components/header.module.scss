@@ -28,20 +28,33 @@
 }
 
 .jambotron__heading {
-    flex: 1 1 70%;
+    flex: 1 1 100%;
     padding: 4.3rem 10.3rem;
 }
 
-.jambotron__img {
-    background: url('../assets/images/image_desktop.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    flex: 1 30%;
+// .jambotron__img {
+//     background: url('../assets/images/image_desktop.png');
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     color: white;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//     position: relative;
+//     flex: 1 30%;
+// }
+
+@media (max-width: 1300px) {
+    .jambotron {
+        background-position: 0;
+    }
+    .jambotron__heading {
+        padding: 3rem;
+    }
+
+    .jambotron__img {
+       background-size: 10rem;
+    }
 }

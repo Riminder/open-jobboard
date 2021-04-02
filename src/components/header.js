@@ -18,8 +18,6 @@ const Header = props => {
               <h1 className="text-extra-large text-white">Fugiat excepteur ut dolore <br></br>esse labore mollit.</h1>
               <span className="text-medium text-white">Consectetur et officia ut Lorem elit.</span>
             </div>
-            <div className={headerStyles.jambotron__img}>
-            </div>
           </div>
         )}
       </header>

@@ -1,8 +1,17 @@
 .filters {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
     &__dropdowns {
         display: flex;
+    }
+}
+
+@media (max-width: 676px) {
+    .filters {
+        &__dropdowns {
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
     }
 }

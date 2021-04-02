@@ -1,6 +1,4 @@
-@import "../../styles/helpers.scss";
-
-.job {
+.card {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -9,27 +7,64 @@
     position: relative;
 }
 
+.job {
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 19px rgba(0, 0, 0, 0.3);
+}
+
 .job__info {
     flex: 1 1 auto;
+    position: relative;
+    color: #333F48;
+}
+
+.date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #323F48;
+    mix-blend-mode: normal;
+    opacity: 0.5;
 }
 
 .job__info_company {
-    color: $primary;
+    color: #333d47;
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 600;
+    width: 26rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .job__info_title {
     margin: 1rem 0 0.5rem 0;
     max-width: 36rem;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
-
+    color: #000;
     font-weight: 700;
     font-size: 22px;
     line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.job__info_description {
+    font-weight: 300;
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .job__info_details {
@@ -37,16 +72,60 @@
     justify-content: flex-start;
     padding: 0;
     list-style: none;
-    color: rgba(151, 153, 157, 0.7);
     margin: 0;
     font-size: 14px;
     letter-spacing: 1px;
+    font-weight: 300;
+    margin-top: 1rem;
 }
 
 .details__item {
-    margin-right: 1rem;
-    max-width: 10rem;
-    overflow: hidden;
-    white-space: nowrap;
+    margin-right: 2rem;
     text-overflow: ellipsis;
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -2rem;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    &__content {
+        padding: 8px 16px 8px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0af;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 600px) {
+    .job__info_company {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .job__info_details {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .details__item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .job__info_title {
+        margin-top: 2rem;
+    }
+
+    .more {
+      position: relative;
+    }
 }

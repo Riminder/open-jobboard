@@ -31,24 +31,24 @@
 
 .dropdown__label {
     padding: 0.4rem 0.8rem;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     border: 1px solid;
-    border-color: rgb(176, 176, 176);
+    border-color: transparent;
     display: flex;
     flex-wrap: nowrap;
     white-space: nowrap;
     box-sizing: border-box;
-    font-weight: 600;
     color: rgb(55, 57, 66);
     cursor: pointer;
     outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F3F3F3;
+    font-weight: 300;
 }
 
 .dropdown__menu_list {
@@ -57,4 +57,15 @@
     display: flex;
     flex-direction: column;
     list-style: none;
+}
+
+
+@media (max-width: 676px) {
+    .dropdown {
+        margin-bottom: 0.5rem;  
+    }
+
+    .dropdown__menu {
+        width: 220px;
+    }
 }

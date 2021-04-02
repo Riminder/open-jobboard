@@ -1,0 +1,95 @@
+.score {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // margin-left: -2rem;
+    z-index: 10;
+    // position: absolute;
+    // top: 50%;
+    right: 0;
+    .score__container {
+        padding: 8px 16px 8px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: rgba(5, 5, 6, 0.1) 1px 2px 3px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        .hidden {
+            display: none;
+        }
+        .score__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            .shape {
+                border: 3px solid;
+                border-radius: 50%;
+                width: 12px;
+                height: 12px;
+                margin-right: 5px;
+            }
+        }
+        &.perfect {
+            .score__content {
+                .shape  {
+                    border-color: #0f5a5e;
+                }
+                .text {
+                    color: #0f5a5e;
+                }
+            }
+        }
+        &.excellent {
+            .score__content {
+                .shape  {
+                    border-color: #EE82EE	;
+                    border-right-color: transparent;
+                }
+                .text {
+                    color: #EE82EE;
+                }
+            }
+        }
+        &.good {
+            .score__content {
+                .shape  {
+                    border-color: #046307	;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                .text {
+                    color: #046307;
+                }
+            }
+        }
+        &.bad {
+            box-shadow: none;
+            border: 1px solid #ff6b6b;
+            padding: 8px 10px 8px 10px;
+            .score__content {
+                .shape  {
+                    display: none;
+                    white-space: nowrap;
+                    font-size: 11px;
+                }
+                .text {
+                    color: #ff6b6b;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .score {
+        justify-content: flex-start;
+        margin-left: 0;
+        position: relative;
+    }
+}

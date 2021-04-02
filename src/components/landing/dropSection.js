@@ -1,6 +1,6 @@
 import React, {useCallback, useState, useEffect} from 'react'
 import { Link } from 'gatsby'
-
+import Media from 'react-media'
 import {useDropzone} from 'react-dropzone'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
@@ -21,6 +21,8 @@ const DropSection = (props) => {
   const [isShownLeft, setIsShownLeft] = useState(true)
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [profileFile, setProfileFile] = useState("");
+  const [device, setDevice] = useState("mobile")
+
   useEffect(() => {
     if(props.profile?.s) {
       setModalIsOpen(false)

@@ -29,7 +29,9 @@ const Dropdown = props => {
       <div
         className={styles.dropdown__label}
         onClick={ () => 
-          setActiveState(prevActiveState => (!prevActiveState))
+          !activeState && window.setTimeout(() => {
+            setActiveState(prevActiveState => !prevActiveState)
+          }, 10)
         }
         role="button"
         tabIndex="0"
@@ -41,7 +43,9 @@ const Dropdown = props => {
         <div className={styles.dropdown__menu}>
           <OutsideClickHandler
             onOutsideClick={ () => 
-              setActiveState(prevActiveState => (!prevActiveState))
+              window.setTimeout(() => {
+                setActiveState(prevActiveState => !prevActiveState)
+              }, 10)
             }
           >
             <ul className={styles.dropdown__menu_list}>
@@ -50,7 +54,7 @@ const Dropdown = props => {
                 if (typeof option === 'string') {
                   selected = selectedItems.indexOf(option) !== - 1 ? true : false
                 } else {
-                  selected = selectedItems === option ? true : false
+                  selected = JSON.stringify(selectedItems) === JSON.stringify(option) ? true : false
                 }
                 
                 return (

@@ -27,17 +27,14 @@ const Modal = (props) => {
             <div className={ModalStyles.modal__container}>
               <div className={ModalStyles.modal__inner}>
                 <div className={ModalStyles.text__box}>
-                  Elit occaecat adipisicing nisi aliquip veniam eiusmod pariatur. 
-                  Eiusmod nisi ex culpa veniam voluptate incididunt culpa consequat proident. 
-                  Ut deserunt mollit nulla qui anim. Irure deserunt ullamco quis aute cillum sit commodo 
-                  sit laboris. Dolor irure voluptate id cupidatat ipsum.
-                  Occaecat tempor nisi laboris consectetur nostrud culpa irure labore est ex. 
-                  Velit cupidatat anim sit officia est veniam eiusmod magna Lorem duis eiusmod 
-                  officia non. Elit consectetur anim commodo officia cupidatat. Cillum anim aute eiusmod irure qui.
-                  Aute laboris irure laboris sunt sit enim non ullamco cupidatat excepteur veniam.
-                  Dolore labore magna voluptate adipisicing ullamco mollit. Magna et culpa Lorem veniam est id laborum.
-                  Sint aliquip velit quis dolor do magna. Voluptate irure occaecat nulla ea nisi voluptate enim duis sit ea esse aute.
-                  Ex nulla tempor proident culpa elit culpa esse reprehenderit nisi velit. Nulla laboris officia laborum enim aliqua.
+                  <h3>
+                    Mention d’information relative au traitement
+                    des données personnelles
+                  </h3>
+                  <p>
+                    Avant de vous proposer les offres en adéquation avec votre profil,
+                    vous devez lire et accepter les <a href="#" target="_blank">Conditions Générales d’Utilisation</a>
+                  </p>
                 </div>
                 <div className={ModalStyles.actions}>
                   <div className={ModalStyles.controls}>
@@ -47,17 +44,9 @@ const Modal = (props) => {
                         value={isConsentOwner}
                         onChange={() => setIsConsentOwner(!isConsentOwner)}
                       >
-                        In sunt magna consequat ex esse consectetur dolor irure est sunt dolor non ex fugiat.
-                      </Checkbox>
-                    </div>
-                    <div className={ModalStyles.control}>
-                      <Checkbox 
-                        theme="fancy-checkbox"
-                        value={isConsentController}
-                        onChange={() => setIsConsentController(!isConsentController)}
-                        disabled={!isConsentOwner}
-                      >
-                        Ipsum nisi labore do excepteur cupidatat eiusmod esse ex.
+                        J'ai lu et j'accepte les <a href="#" target="_blank">Conditions Générales d’Utilisation</a> qui autorisent HrFlow.ai Emploi à conserver mes données personnelles,
+                        calculer mon niveau d'adéquation avec les offres et partager mon profil avec les recruteurs du réseau HrFlow.ai Emploi.
+
                       </Checkbox>
                     </div>
                   </div>
@@ -66,14 +55,14 @@ const Modal = (props) => {
                       className="button button--light"
                       onClick={() => props.toggleModal(false)}
                     >
-                      ANNULER
+                      Annuler
                     </button>
                     <button
                       className="button ml-1"
                       onClick={() => props.postProfile(isConsentController)}
                       disabled={props.profile?.r || !isConsentOwner}
                     >
-                      {props.profile?.r ? <span className="loader"></span> : 'CONFIRMER'}
+                      {props.profile?.r ? <span className="loader"></span> : 'C’est parti'}
                     </button>
                   </div>
                 </div>

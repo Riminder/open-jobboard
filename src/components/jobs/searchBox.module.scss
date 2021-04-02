@@ -15,11 +15,11 @@
         }
         .input {
             height: 34px;
-            border: 1px solid #d3d6dd;
-            border-radius: 2px;
+            border: 1px solid transparent;
+            border-radius: 3px;
             padding-left: 10px;
             z-index: 2;
-            background: transparent;
+            background: #F3F3F3;
             position: relative;
             outline: none;
             margin-bottom: 0.5rem;
@@ -32,7 +32,7 @@
                 list-style: none;
                 margin: 0 0 0.5rem;
                 .choice {
-                    border: 1px solid $primary;
+                    border: 1px solid #0af;
                     border-radius: 2px;
                     margin: 4px 6px 2px 0;
                     padding: 5px 8px;
@@ -42,11 +42,11 @@
                     display: flex;
                     align-items: center;
                     color: white;
-                    background-color: $primary;
+                    background-color: #0af;
                 }
                 .disabled {
                     background: white;
-                    color: $primary;
+                    color: #0af;
                 }
             }
         }

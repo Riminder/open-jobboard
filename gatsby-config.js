@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Your job board title',
+    title: 'HrFlow.ai demo job board',
     description: `
-      Your job board description
+      HrFlow.ai demo job board
     `,
-    siteUrl: 'https://example.com',
+    siteUrl: 'https://Damsic.cvbox.com',
     image: 'your og image url',
     author:  'HrFlow.ai',
     organization: {
@@ -21,7 +21,28 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "your s3 bucket name",
+        bucketName: "open-jobboard-board",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+          // Setting this parameter is optional
+          anonymize: true
+        },
+        facebookPixel: {
+          pixelId: 'YOUR_FACEBOOK_PIXEL_ID'
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
       },
     },
   ],
