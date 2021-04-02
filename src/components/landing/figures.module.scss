@@ -10,12 +10,15 @@
     max-width: 70rem;
     margin: auto;
     margin-top: 2.2rem;
+    flex-wrap: wrap;
 }
 
 .item {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin: 1rem;
+    max-width: 300px;
 }
 
 .details {
@@ -26,4 +29,18 @@
     padding-top: .4rem;
     margin-right: 1.16rem;
     width: 4rem;
+}
+
+
+
+@media (max-width: 1224px) {
+
+    .section {
+        background: transparent;
+        padding: 2rem 1rem;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
 }

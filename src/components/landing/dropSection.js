@@ -68,19 +68,49 @@ const DropSection = (props) => {
 
   const {getRootProps, getInputProps} = useDropzone({onDrop})
   const postProfile = (consentController) => {
-    props.addProfile(profileFile, consentController)
+    props.addProfile({file: profileFile, consent: consentController, redirect: true})
   }
 
+  const leftClassContent = isShownLeft ? [clippedStyles.left__content, clippedStyles.content__shown] : [clippedStyles.left__content]
+  const leftClassHover = isShownLeft ? [clippedStyles.left__content] : [clippedStyles.left__content_hovered, clippedStyles.hover__shown]
+
   return (
-    <section className={clippedStyles.clipped}>
-      <div className={clippedStyles.left}
-        onMouseEnter={() => setIsShownLeft(false)}
-        onMouseLeave={() => setIsShownLeft(true)}
-        role="textbox"
-        tabIndex="-1"
-      >
-        {isShownLeft ? (
-            <div className={clippedStyles.left__content}>
+    <>
+      <section className={clippedStyles.clipped}>
+        {/* <Media
+          queries={{ large: "(min-width: 1200px)" }}
+          defaultMatches={{ large: device === 'desktop' && props.isDesktopOrLaptop === 'desktop' }}
+          render={() => 
+            <div className={clippedStyles.bridge}>
+              <img src={bridgeImg} />
+            </div>
+          }
+        /> */}
+        <Media
+          queries={{ mobile: "(max-width: 1200px)" }}
+          defaultMatches={{ mobile: device === 'mobile' && props.isDesktopOrLaptop === 'mobile' }}
+          render={() => 
+            <div className={clippedStyles.heading_mobile}>
+              <div className="text-extra-large"><span className="text-bold-600">BPI group</span> vous accompagne</div>
+              <div className="text-extra-large text-bold-600">vers un nouvel avenir professionnel</div>
+              {/* <div className={clippedStyles.bridge_mobile}>
+                <img src={bridgeImg} className={clippedStyles.bridge_mobile_img} />
+              </div> */}
+            </div>
+          }
+        />
+
+        <Media
+          queries={{ large: "(min-width: 1200px)" }}
+          defaultMatches={{ large: device === 'desktop' && props.isDesktopOrLaptop === 'desktop' }}
+          render={() => 
+            <div className={clippedStyles.left}
+            onMouseEnter={() => setIsShownLeft(false)}
+            onMouseLeave={() => setIsShownLeft(true)}
+            role="textbox"
+            tabIndex="-1"
+          >
+            <div className={leftClassContent.join(' ')}>
               <div className={clippedStyles.heading}>
                 <div className="text-extra-large">Dolore occaecat dolore consequat deserunt mollit deserunt laboris </div>
                 <div className="text-medium">Ut Lorem anim minim consectetur aliquip nulla est anim </div>
@@ -90,9 +120,7 @@ const DropSection = (props) => {
                 <span className={clippedStyles.shape__text}>With Resume</span>
               </div>
             </div>
-          ) :
-          (
-            <div className={clippedStyles.left__content_hovered} {...getRootProps()}>
+            <div className={leftClassHover.join(' ')} {...getRootProps()}>
               <input {...getInputProps()} />
               <div className={clippedStyles.dropping}>
                 <div className={clippedStyles.cloud_row}>
@@ -130,67 +158,115 @@ const DropSection = (props) => {
                 </div>
               </div>
             </div>
-          )
-        }
+          </div>
+        }/>
 
-      </div>
-      <div
-        className={clippedStyles.right}
-         onMouseEnter={() => setIsShownRight(false)}
-        onMouseLeave={() => setIsShownRight(true)}
-        role="textbox"
-        tabIndex="-2"
-      >
-        { isShownRight ? (
-            <div className={clippedStyles.right__content}>
-              <div className={clippedStyles.heading}>
-              </div>
-              <div className={clippedStyles.shape}>
-                <img src={boyImg} alt="Jumping boy" />
-                <span className={clippedStyles.shape__text}>Without Resume</span>
+        <Media
+          queries={{ mobile: "(max-width: 1200px)" }}
+          defaultMatches={{ mobile: device === 'mobile' && props.isDesktopOrLaptop === 'mobile' }}
+          render={() => 
+            <div className={clippedStyles.left}
+              onMouseEnter={() => setIsShownLeft(false)}
+              onMouseLeave={() => setIsShownLeft(true)}
+              role="textbox"
+              tabIndex="-1"
+            >
+              <div className={[clippedStyles.left__content_hovered, clippedStyles.hover__shown].join(' ')} {...getRootProps()}>
+                <input {...getInputProps()} />
+                <div className={clippedStyles.dropping}>
+                  <div className={clippedStyles.cloud_row_mobile}>
+                      <div className={clippedStyles.dropzone} >
+                        <span className="text-large text-bold-600">
+                          Glissez votre CV
+                        </span>
+                        <div id="dropzone">
+                        
+                        </div>
+                        <div className={clippedStyles.dashed}>
+                          <div className={clippedStyles.logo_wrapper}>
+                            <img src={plusLogo} alt="plus" />
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div className="drop-message text-large text-bold-600">et le tour est joué</div>
+                </div>
               </div>
             </div>
-          )
-          :
-          (
-            <Link to="/jobs" className={clippedStyles.right__content_hovered}>
-              <span className={clippedStyles.row}>
-                <img src={times} alt="times 1" />
-                <img src={times} alt="times 2" />
-                <img src={times} alt="times 3" />
-              </span>
-              <span className={`${clippedStyles.row} text-large text-bold-700 text-right`}>
-                Trop pressé
-              </span>
-              <span className={clippedStyles.row}>
-                <img src={times} alt="times 4" />
-                <img src={times} alt="times 5" />
-                <img src={times} alt="times 6" />
-                <img src={times} alt="times 7" />
-              </span>
-              <span className={`${clippedStyles.row} text-large text-right`}>
-                Accède à nos offres <FontAwesomeIcon className="icon-right" icon={faLongArrowAltRight} />
-              </span>
-              <span className={clippedStyles.row}>
-                <img src={times} alt="times 8" />
-                <img src={times} alt="times 9" />
-                <img src={times} alt="times 10" />
-                <img src={times} alt="times 11" />
-              </span>
-            </Link>
-          )
-        }
-      </div>
-    
-      <Modal 
-        toggleModal={setModalIsOpen}
-        modalIsOpen={modalIsOpen}
-        postProfile={postProfile}
-        profile={props.profile}
-      />
+          }
+        />
 
-    
-    </section>
+          <Media
+            queries={{ large: "(min-width: 1200px)" }}
+            defaultMatches={{ large: device === 'desktop' && props.isDesktopOrLaptop === 'desktop'}}
+            render={() => 
+            <div
+              className={clippedStyles.right}
+              onMouseEnter={() => setIsShownRight(false)}
+              onMouseLeave={() => setIsShownRight(true)}
+              role="textbox"
+              tabIndex="-2"
+            >
+              { isShownRight ? (
+                  <div className={clippedStyles.right__content}>
+                    <div className={clippedStyles.heading}>
+                    </div>
+                    <div className={clippedStyles.shape}>
+                      <img src={boyImg} alt="Jumping boy" />
+                      <span className={clippedStyles.shape__text}>Without Resume</span>
+                    </div>
+                  </div>
+                )
+                :
+                (
+                  <Link to="/jobs" className={clippedStyles.right__content_hovered}>
+                    <span className={clippedStyles.row}>
+                      <img src={times} alt="times 1" />
+                      <img src={times} alt="times 2" />
+                      <img src={times} alt="times 3" />
+                    </span>
+                    <span className={`${clippedStyles.row} text-large text-bold-700 text-right`}>
+                      Trop pressé
+                    </span>
+                    <span className={clippedStyles.row}>
+                      <img src={times} alt="times 4" />
+                      <img src={times} alt="times 5" />
+                      <img src={times} alt="times 6" />
+                      <img src={times} alt="times 7" />
+                    </span>
+                    <span className={`${clippedStyles.row} text-large text-right`}>
+                      Accède à nos offres <FontAwesomeIcon className="icon-right" icon={faLongArrowAltRight} />
+                    </span>
+                    <span className={clippedStyles.row}>
+                      <img src={times} alt="times 8" />
+                      <img src={times} alt="times 9" />
+                      <img src={times} alt="times 10" />
+                      <img src={times} alt="times 11" />
+                    </span>
+                  </Link>
+                )
+              }
+            </div>
+            } 
+          />
+          <Media
+            queries={{ mobile: "(max-width: 1200px)" }}
+            defaultMatches={{ mobile: device === 'mobile' && props.isDesktopOrLaptop === 'mobile' }}
+            render={() => 
+              <div className={clippedStyles.content_mobile}>
+                <div className="text-extra-large"><span className="text-bold-600">Trop pressé</span></div>
+                <Link to="/jobs" className="button button-large">Accédez à nos offres <FontAwesomeIcon className="icon-right" icon={faLongArrowAltRight} /></Link>
+              </div>
+            }
+          />      
+        <Modal 
+          toggleModal={setModalIsOpen}
+          modalIsOpen={modalIsOpen}
+          postProfile={postProfile}
+          profile={props.profile}
+        />
+      </section>
+    </>
   )
 }
 

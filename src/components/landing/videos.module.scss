@@ -22,3 +22,25 @@
     width: 15rem;
     height: auto;
 }
+
+
+@media (max-width: 1224px) {
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .content {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img {
+       margin-top: 2rem;
+    }
+
+    .img:first-of-type {
+        margin-top: 0;
+    }
+}

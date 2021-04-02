@@ -20,11 +20,11 @@ const Home = props => {
     <Layout>
       <SEO title="Open job board" />
       <DropSection addProfile={props.addProfile} profile={props.profile} />
-      <Testimonial />
+       <Testimonial />
       <Cards />
       <Testimonial reversed/>
       <Figures/>
-      <Videos />
+     <Videos />
     </Layout>
   );
 }

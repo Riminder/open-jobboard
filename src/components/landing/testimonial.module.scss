@@ -21,3 +21,22 @@
     width: auto;
     margin: 0 4rem;
 }
+
+@media (max-width: 1224px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .img {
+        margin: 1rem;
+        width: 90%;
+        height: auto;
+    }
+}

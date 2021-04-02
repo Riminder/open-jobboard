@@ -11,7 +11,7 @@ const Cards = () => {
             <div className="mb-1">
               <img src={mock96x96} alt="mock 2" className={cardsStyles.logo} />
             </div>
-            <div className="text-medium">
+            <div className="text-medium text-center">
               Ipsum amet mollit anim sint cillum.
             </div>
           </div>
@@ -19,7 +19,7 @@ const Cards = () => {
             <div className="mb-1">
               <img src={mock96x96} alt="mock 3" className={cardsStyles.logo} />
             </div>
-            <div className="text-medium">
+            <div className="text-medium text-center">
               Ipsum amet mollit anim sint cillum.
             </div>
           </div>
@@ -27,7 +27,7 @@ const Cards = () => {
             <div className="mb-1">
               <img src={mock96x96} alt="mock 5" className={cardsStyles.logo} />
             </div>
-            <div className="text-medium">
+            <div className="text-medium text-center">
               Ipsum amet mollit anim sint cillum.
             </div>
           </div>

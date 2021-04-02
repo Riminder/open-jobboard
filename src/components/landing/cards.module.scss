@@ -15,9 +15,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1rem;
+
 }
 
 .logo {
     width: 5rem;
     height: auto;
+}
+
+@media (max-width: 1224px) {
+    .section {
+        background: transparent;
+        padding: 2rem 1rem;
+    }
+    .content {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
 }

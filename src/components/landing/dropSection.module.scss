@@ -33,6 +33,15 @@
 
 .left__content {
     padding: 3rem 0 6rem 6rem;
+    display: none;
+    .shape {
+        margin-right: 9rem;
+        margin-top: 0;
+    }
+}
+
+.left__content.content__shown {
+    display: block;
 }
 
 .right__content {
@@ -67,12 +76,13 @@
 .right__content_hovered {
     display: flex;
     flex-direction: column;
-    padding: 3rem 7rem 13rem 0;
+    padding-right: 3rem;
     padding-left: calc(11% + 5rem);
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
     color: white;
     text-decoration: none;
+    height: 100%;
 }
 
 .dropping {
@@ -89,13 +99,28 @@
 
 .left__content_hovered {
     height: 100%;
+    display: none;
 }
+
+.left__content_hovered.hover__shown {
+    display: block;
+}
+
 .cloud_row {
     width: 100%;
     margin-top: 2rem;
     margin-bottom: 2.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.cloud_row_mobile {
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
     align-items: center;
 }
 
@@ -137,4 +162,74 @@
     justify-content: space-between;
     margin-bottom: 6rem;
     width: 100%;
+}
+
+.bridge {
+    width: 26rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 12rem);
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    img {
+        width: 26rem;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 1224px) {
+    .clipped {
+        flex-direction: column;
+        height: unset;
+    }
+
+    .content_mobile {
+        padding: 3rem 1rem;
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .heading_mobile {
+        background: white;
+        color: $primary;
+        text-align: center;
+        padding: 2rem 1rem 7rem 1rem;
+        position: relative;
+    }
+    .bridge_mobile {
+        position: absolute;
+        bottom: -5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        width: 100%;
+        margin-left: -1rem;
+    }
+
+    .bridge_mobile_img {
+        height: 10rem;
+        width: auto;
+    }
+    .left {
+        flex: 1 1 100%;
+        clip-path: unset;
+        background: $primary;
+        background-repeat: no-repeat;
+        margin-right: 0;
+        padding-top: 5rem;
+        // color: $primary;
+    }
+    .dropping {
+        padding-bottom: 2rem;
+    }
+    
+    .left:hover {
+        background: $primary;
+    }
 }
