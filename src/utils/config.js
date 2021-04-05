@@ -1,5 +1,5 @@
 export const CATEGORIES = [
-    'AI / Research & Development',
+    'Research & Development',
     'Artificial intelligence',
     'Services',
     'Software engineering',

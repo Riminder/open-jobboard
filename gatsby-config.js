@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "open-jobboard-board",
+        bucketName: "open-job-board",
       },
     },
     {
